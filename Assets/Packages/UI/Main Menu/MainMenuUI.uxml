@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Packages/UI/Styles/IndexStyleUI.uss?fileID=7433441132597879392&amp;guid=df7dfbb796c07e343b45c1034650e27c&amp;type=3#IndexStyleUI" />
+    <Style src="project://database/Assets/Packages/UI/Styles/MainMenuStyleUI.uss?fileID=7433441132597879392&amp;guid=18274ed713d09c84884401212221124a&amp;type=3#MainMenuStyleUI" />
+    <ui:VisualElement name="root" style="flex-grow: 1; flex-direction: row; font-size: 32px; -unity-font: url(&apos;project://database/Assets/Packages/Fonts/Lexend/static/Lexend-Regular.ttf?fileID=12800000&amp;guid=6fef618d93236ab488e19ffe173fda09&amp;type=3#Lexend-Regular&apos;); -unity-font-definition: initial;">
+        <ui:VisualElement name="button-area" style="flex-grow: 0;">
+            <ui:Button text="Game" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(122, 157, 84);">
+                <ui:VisualElement class="icon" style="flex-grow: 1;" />
+            </ui:Button>
+            <ui:Button text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(154, 59, 59);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="view-area" style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>

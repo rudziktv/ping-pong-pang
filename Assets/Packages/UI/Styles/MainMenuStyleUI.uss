@@ -1,0 +1,18 @@
+#button-area {
+    justify-content: center;
+    min-width: 350px;
+    max-width: 25%;
+    flex-grow: 0;
+    width: 500px;
+    padding-left: 25px;
+}
+
+#button-area > Button {
+}
+
+#view-area {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
