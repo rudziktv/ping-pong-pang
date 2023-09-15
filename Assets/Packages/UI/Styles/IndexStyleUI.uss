@@ -3,6 +3,7 @@
 
 Button > .icon {
     position: absolute;
+    -unity-background-scale-mode: scale-and-crop;
 }
 
 Button {
@@ -16,13 +17,32 @@ Button {
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    font-size: 48px;
+    padding-left: 15px;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 32px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+Button > .tint {
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition-timing-function: ease-out-cubic;
+    transition-duration: 0.4s;
+}
+
+Button:hover > .tint {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+Button:active > .tint {
+    background-color: rgba(255, 255, 255, 0.15);
 }
