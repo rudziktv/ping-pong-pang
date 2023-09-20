@@ -1,4 +1,6 @@
 #root {
+    -unity-font-definition: initial;
+    -unity-font: url('project://database/Assets/Packages/Fonts/Lexend/static/Lexend-Regular.ttf?fileID=12800000&guid=6fef618d93236ab488e19ffe173fda09&type=3#Lexend-Regular');
 }
 
 Button > .icon {
@@ -36,7 +38,7 @@ Button > .tint {
     right: 0;
     bottom: 0;
     transition-timing-function: ease-out-cubic;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
 }
 
 Button:hover > .tint {
@@ -45,4 +47,36 @@ Button:hover > .tint {
 
 Button:active > .tint {
     background-color: rgba(255, 255, 255, 0.15);
+}
+
+.icon_button {
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    flex-direction: row;
+}
+
+.icon_button > .icon {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.icon_button > Label {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+Button:disabled {
+    background-color: rgb(51, 51, 51);
 }
