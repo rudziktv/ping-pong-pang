@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TestGameRule : MonoBehaviour
+{
+    [SerializeField]
+    GameObject ball;
+
+    [Range(1f, 100f)]
+    [SerializeField]
+    float velocity;
+
+    Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = ball.GetComponent<Rigidbody2D>();
+
+        rb.AddForce(Vector2.up * velocity, ForceMode2D.Impulse);
+    }
+
+    private void FixedUpdate()
+    {
+        Debug.Log(rb.velocity);
+    }
+}

@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Packages/UI/Styles/IndexStyleUI.uss?fileID=7433441132597879392&amp;guid=df7dfbb796c07e343b45c1034650e27c&amp;type=3#IndexStyleUI" />
     <Style src="project://database/Assets/Packages/UI/Styles/GameSubpageStyleUI.uss?fileID=7433441132597879392&amp;guid=574d6c71e2d0b5d40a58c17eef08692f&amp;type=3#GameSubpageStyleUI" />
-    <ui:VisualElement name="root" style="width: 100%; height: 100%; background-color: rgb(70, 94, 125); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
+    <ui:VisualElement name="root" style="width: 100%; height: 100%; background-color: rgb(70, 94, 125); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; color: rgb(255, 255, 255);">
         <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: space-around; align-items: center;">
             <ui:Button name="Button" focusable="false" class="icon_button" style="background-color: rgb(122, 157, 84); display: none;">
                 <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/PNG/White/2x/controllerTilt.png?fileID=2800000&amp;guid=644268c97ece8c24f8546ee2b2af5c3e&amp;type=3#controllerTilt&apos;);" />
@@ -19,7 +19,16 @@
                 <ui:VisualElement class="tint" style="flex-grow: 0;" />
             </ui:Button>
         </ui:VisualElement>
-        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="position: absolute; left: 10px; right: 10px; top: 98px; bottom: 98px;" />
+        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="position: absolute; left: 10px; right: 10px; top: 98px; bottom: 98px;">
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:IntegerField label="Win Score" value="12" tooltip="If set to 0, game is endless." />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:Slider picking-mode="Ignore" label="Velocity" value="1" high-value="20" low-value="1" show-input-field="true" tooltip="Speed of ball" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:ScrollView>
         <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(122, 157, 84); width: 78px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; position: absolute; bottom: 10px; right: 10px;">
             <ui:VisualElement class="icon" style="flex-grow: 1; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/right.png?fileID=2800000&amp;guid=a7615f000ad116b4b9db5ebc6b0b0083&amp;type=3#right&apos;);" />
             <ui:VisualElement class="tint" style="flex-grow: 0;" />
