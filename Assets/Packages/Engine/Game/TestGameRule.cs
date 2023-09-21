@@ -17,11 +17,11 @@ public class TestGameRule : MonoBehaviour
     {
         rb = ball.GetComponent<Rigidbody2D>();
 
-        rb.AddForce(Vector2.up * velocity, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.right * velocity, ForceMode2D.Impulse);
     }
 
-    private void FixedUpdate()
-    {
-        Debug.Log(rb.velocity);
-    }
+    //private void FixedUpdate()
+    //{
+    //    Debug.Log(rb.velocity);
+    //}
 }

@@ -1651,6 +1651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acef58c298d75948b62eb0196e975f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 1
+  sensitivity: 0.05
+  boundaries: 3.7
 --- !u!1 &1740396780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,6 +2102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acef58c298d75948b62eb0196e975f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputType: 3
+  sensitivity: 0.05
+  boundaries: 3.7
 --- !u!1 &1835387369
 GameObject:
   m_ObjectHideFlags: 0
