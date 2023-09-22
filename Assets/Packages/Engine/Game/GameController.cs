@@ -99,6 +99,14 @@ public class GameController : MonoBehaviour
         }
 
         UpdateScoreUI();
+
+        if (scorePlayer1 >= rules.winScore || scorePlayer2 >= rules.winScore)
+        {
+            WinSequence();
+            return;
+        }
+
+        AudioController.Instance.PlayScore();
     }
 
     
@@ -115,5 +123,11 @@ public class GameController : MonoBehaviour
     {
         GameUI.Instance.PlayerScore(OutSide.left, scorePlayer1);
         GameUI.Instance.PlayerScore(OutSide.right, scorePlayer2);
+    }
+
+
+    void WinSequence()
+    {
+        AudioController.Instance.PlayWin();
     }
 }
