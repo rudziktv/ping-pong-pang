@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TestGameRule : MonoBehaviour
@@ -20,8 +18,8 @@ public class TestGameRule : MonoBehaviour
         rb.AddForce(Vector2.right * velocity, ForceMode2D.Impulse);
     }
 
-    //private void FixedUpdate()
-    //{
-    //    Debug.Log(rb.velocity);
-    //}
+    private void FixedUpdate()
+    {
+        rb.velocity = rb.velocity.normalized * velocity / rb.mass;
+    }
 }

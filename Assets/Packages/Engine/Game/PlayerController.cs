@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -42,8 +40,6 @@ public class PlayerController : MonoBehaviour
                 input = GameInput.Instance.InputWS;
                 break;
         }
-
-        Debug.Log(input);
     }
 
 

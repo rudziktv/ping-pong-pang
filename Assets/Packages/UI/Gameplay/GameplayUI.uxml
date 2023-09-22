@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Packages/UI/Styles/IndexStyleUI.uss?fileID=7433441132597879392&amp;guid=df7dfbb796c07e343b45c1034650e27c&amp;type=3#IndexStyleUI" />
+    <ui:VisualElement name="root" style="flex-grow: 1;">
+        <ui:VisualElement name="score" style="flex-grow: 0; flex-direction: row; font-size: 64px; color: rgb(255, 255, 255); -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 2px; text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.49); justify-content: center;">
+            <ui:Label tabindex="-1" text="player1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="player1" style="color: rgb(44, 43, 173);" />
+            <ui:Label tabindex="-1" text=" : " parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <ui:Label tabindex="-1" text="player2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="player2" style="color: rgb(183, 25, 25);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
