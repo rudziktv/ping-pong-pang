@@ -1,9 +1,10 @@
+using Assets.Packages.Engine.Game;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    PlayerInputType inputType;
+    OutSide side;
 
     [SerializeField]
     float sensitivity;
@@ -28,19 +29,15 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        switch (inputType)
+        switch (side)
         {
-            case PlayerInputType.sideArrows:
-                input = GameInput.Instance.InputLeftRight;
-                break;
-            case PlayerInputType.verticalArrows:
-                input = GameInput.Instance.InputUpDown;
-                break;
-            case PlayerInputType.ad:
-                input = GameInput.Instance.InputAD;
-                break;
-            case PlayerInputType.ws:
+            case OutSide.Left:
                 input = GameInput.Instance.InputWS;
+                sensitivity = GameSettings.P1Sensitivity;
+                break;
+            case OutSide.Right:
+                input = GameInput.Instance.InputUpDown;
+                sensitivity = GameSettings.P2Sensitivity;
                 break;
         }
     }
@@ -62,14 +59,4 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = center.position;
     }
-}
-
-
-public enum PlayerInputType
-{
-    sideArrows = 0,
-    verticalArrows = 1,
-    ad = 2,
-    ws = 3,
-    //custom = 4,
 }

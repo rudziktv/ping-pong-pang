@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="OptionsSubpageUI" src="project://database/Assets/Packages/UI/Main%20Menu/Subpages/OptionsSubpageUI.uxml?fileID=9197481963319205126&amp;guid=317d185650a666841b18177931a11441&amp;type=3#OptionsSubpageUI" />
+    <Style src="project://database/Assets/Packages/UI/Styles/IndexStyleUI.uss?fileID=7433441132597879392&amp;guid=df7dfbb796c07e343b45c1034650e27c&amp;type=3#IndexStyleUI" />
+    <Style src="project://database/Assets/Packages/UI/Styles/PauseMenuStyleUI.uss?fileID=7433441132597879392&amp;guid=9483f6a3e56720b43b20377b577c643f&amp;type=3#PauseMenuStyleUI" />
+    <ui:VisualElement name="root" style="flex-grow: 1; flex-direction: row; justify-content: center; background-color: rgba(0, 0, 0, 0.5);">
+        <ui:VisualElement name="button-container" style="flex-grow: 0; align-items: flex-end; justify-content: center;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="resume" class="icon_button" style="background-color: rgb(122, 157, 84); align-items: center;">
+                <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/right.png?fileID=2800000&amp;guid=a7615f000ad116b4b9db5ebc6b0b0083&amp;type=3#right&apos;);" />
+                <ui:VisualElement class="tint" style="flex-grow: 0;" />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="menu" class="icon_button" style="background-color: rgb(154, 59, 59); align-items: center;">
+                <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/home.png?fileID=2800000&amp;guid=0d6b06a6617244344a42e568fd34ad12&amp;type=3#home&apos;);" />
+                <ui:VisualElement class="tint" style="flex-grow: 0;" />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="view-container" style="flex-grow: 1; max-width: 700px; padding-left: 50px; padding-right: 50px; padding-top: 25px; padding-bottom: 50px; align-items: center;">
+            <ui:VisualElement style="flex-grow: 0; flex-direction: row; align-items: center; margin-bottom: 25px;">
+                <ui:VisualElement name="VisualElement" class="icon" style="flex-grow: 0; width: 96px; height: 96px; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/gear.png?fileID=2800000&amp;guid=d34e3fee6fd246540ab419d655c57332&amp;type=3#gear&apos;); position: relative; margin-right: 7px;" />
+                <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); font-size: 48px;" />
+            </ui:VisualElement>
+            <ui:Instance template="OptionsSubpageUI" name="OptionsSubpageUI" style="flex-grow: 1; width: 100%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -2206,7 +2206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acef58c298d75948b62eb0196e975f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputType: 1
+  side: 1
   sensitivity: 0.05
   center: {fileID: 2086579822}
   boundaries: 3.6
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acef58c298d75948b62eb0196e975f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputType: 3
+  side: 0
   sensitivity: 0.05
   center: {fileID: 1370730343}
   boundaries: 3.6
@@ -3136,8 +3136,8 @@ MonoBehaviour:
     center: {fileID: 553865934}
     leftServe: {fileID: 916221702}
     rightServe: {fileID: 281716021}
-    player1: {fileID: 0}
-    player2: {fileID: 0}
+    player1: {fileID: 1817649426}
+    player2: {fileID: 1725114032}
 --- !u!1001 &3954039946773988808
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -61,7 +61,7 @@ public class MainMenuModel : MonoBehaviour
 
     private void OpenSettings()
     {
-        UIHelper.RemoveAllChildren(page);
+        page.Clear();
         UIHelper.HideRoot(gameMenuUI);
 
         page.Add(settingsUI);
@@ -70,7 +70,7 @@ public class MainMenuModel : MonoBehaviour
 
     private void OpenGameMenu()
     {
-        UIHelper.RemoveAllChildren(page);
+        page.Clear();
         UIHelper.HideRoot(settingsUI);
 
         page.Add(gameMenuUI);

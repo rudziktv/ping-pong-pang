@@ -108,6 +108,8 @@ public class GameController : MonoBehaviour
 
     public void GameRestart(bool changeSide = false)
     {
+        Time.timeScale = 1f;
+
         ScoreClear();
 
         objects.player1.CenterPlayer();

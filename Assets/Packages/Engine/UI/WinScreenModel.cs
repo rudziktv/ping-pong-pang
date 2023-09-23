@@ -62,8 +62,6 @@ namespace Assets.Packages.Engine.UI
         {
             var stats = GameSession.Instance.Statistics;
 
-            Debug.Log("XD");
-
             var score = GameController.Instance.GetScore;
 
             scorePlayer1.text = score.p1.ToString();
