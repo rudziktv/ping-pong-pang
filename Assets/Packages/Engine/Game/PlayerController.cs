@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     float sensitivity;
 
     [SerializeField]
+    Transform center;
+
+    [SerializeField]
     float boundaries;
 
     float input;
@@ -52,6 +55,12 @@ public class PlayerController : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, -boundaries, boundaries);
 
         transform.position = pos;
+    }
+
+
+    public void CenterPlayer()
+    {
+        transform.position = center.position;
     }
 }
 

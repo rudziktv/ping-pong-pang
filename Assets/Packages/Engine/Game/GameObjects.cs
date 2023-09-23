@@ -10,5 +10,8 @@ namespace Assets.Packages.Engine.Game
         public Transform center;
         public Transform leftServe;
         public Transform rightServe;
+
+        public PlayerController player1;
+        public PlayerController player2;
     }
 }

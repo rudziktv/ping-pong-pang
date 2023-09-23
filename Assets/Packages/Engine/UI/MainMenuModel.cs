@@ -19,6 +19,9 @@ public class MainMenuModel : MonoBehaviour
     TemplateContainer gameMenuUI;
     TemplateContainer settingsUI;
 
+    GameSubpageModel gameSubpageModel;
+    SettingsModel settingsModel;
+
 
     VisualElement page;
 
@@ -42,11 +45,13 @@ public class MainMenuModel : MonoBehaviour
 
         gameMenuUI = gameMenuAsset.Instantiate();
         UIHelper.InitializeRoot(gameMenuUI);
-        //gameMenuUI.style.flexGrow = 1;
+
+        gameSubpageModel = new(gameMenuUI);
 
         settingsUI = settingsAsset.Instantiate();
         UIHelper.InitializeRoot(settingsUI);
-        //settingsUI.style.flexGrow = 1;
+
+        settingsModel = new(settingsUI);
 
 
         gameBtn.clicked += OpenGameMenu;
@@ -72,6 +77,4 @@ public class MainMenuModel : MonoBehaviour
 
         UIHelper.ShowRoot(gameMenuUI);
     }
-
-
 }

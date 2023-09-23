@@ -49,7 +49,8 @@ namespace Assets.Packages.Engine.UI
 
         private void PlayAgain()
         {
-            GameController.Instance.GameRestart();
+            CloseWinScreen();
+            GameController.Instance.GameRestart(true);
         }
 
         private void GoToMainMenu()
@@ -63,6 +64,10 @@ namespace Assets.Packages.Engine.UI
 
             Debug.Log("XD");
 
+            var score = GameController.Instance.GetScore;
+
+            scorePlayer1.text = score.p1.ToString();
+            scorePlayer2.text = score.p2.ToString();
 
             statsTime.text = BuildTimeString(stats.time);
             statsDistance.text = $"{Mathf.Round(stats.distance)} m";

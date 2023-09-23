@@ -79,10 +79,6 @@ Button:active > .tint {
     color: rgb(255, 255, 255);
 }
 
-Button:disabled {
-    background-color: rgb(51, 51, 51);
-}
-
 .hide-root {
     scale: 0 0;
 }
@@ -98,4 +94,8 @@ Button:hover {
 
 Button:active {
     translate: 0 -2px;
+}
+
+Button:disabled {
+    background-color: rgb(51, 51, 51);
 }

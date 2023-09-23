@@ -1,4 +1,5 @@
 using Assets.Packages.Engine.Game;
+using System.Collections;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -109,8 +110,20 @@ public class GameController : MonoBehaviour
     {
         ScoreClear();
 
+        objects.player1.CenterPlayer();
+        objects.player2.CenterPlayer();
+
         if (changeSide)
             GameRules.startSide = GameRules.SecondSide;
+
+        StartCoroutine(nameof(UnfreezeGame));
+    }
+
+
+    IEnumerator UnfreezeGame()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        Time.timeScale = 1f;
     }
 
     
@@ -137,5 +150,21 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
 
         GameUI.Instance.WinScreen();
+    }
+
+
+    public Score GetScore => new(scorePlayer1, scorePlayer2);
+}
+
+
+public class Score
+{
+    public int p1;
+    public int p2;
+
+    public Score(int p1, int p2)
+    {
+        this.p1 = p1;
+        this.p2 = p2;
     }
 }
