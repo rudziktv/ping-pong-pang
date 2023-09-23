@@ -11,5 +11,7 @@ public class GameRules
 
     public static float velocity;
 
+    public static bool accelerationOverTime;
+
     public static OutSide SecondSide => startSide == OutSide.Left ? OutSide.Right : OutSide.Left;
 }
