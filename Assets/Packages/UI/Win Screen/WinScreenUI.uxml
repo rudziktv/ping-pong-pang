@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/Packages/UI/Styles/IndexStyleUI.uss?fileID=7433441132597879392&amp;guid=df7dfbb796c07e343b45c1034650e27c&amp;type=3#IndexStyleUI" />
     <Style src="project://database/Assets/Packages/UI/Styles/WinScreenStyleUI.uss?fileID=7433441132597879392&amp;guid=44a697e124d0e8f4a9d7eb6969e0da50&amp;type=3#WinScreenStyleUI" />
     <ui:VisualElement name="root" style="flex-grow: 1;">
-        <ui:VisualElement name="window" style="flex-grow: 1; background-color: rgb(27, 36, 48); margin-left: 50px; margin-right: 50px; margin-top: 50px; margin-bottom: 50px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; color: rgb(255, 255, 255); transition-duration: 1s; transition-timing-function: ease-out-elastic; transition-delay: 0.1s;">
+        <ui:VisualElement name="window" class="hide-window" style="flex-grow: 1; background-color: rgb(27, 36, 48); margin-left: 50px; margin-right: 50px; margin-top: 50px; margin-bottom: 50px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; color: rgb(255, 255, 255); transition-duration: 1s; transition-timing-function: ease-out-elastic; transition-delay: 0.1s;">
             <ui:VisualElement style="flex-grow: 1; align-items: center;">
                 <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: space-around; flex-grow: 0; width: 100%;">
                     <ui:VisualElement class="score-area" style="flex-grow: 0;">
@@ -31,12 +31,12 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 0; flex-direction: row; align-items: center; position: absolute; bottom: 10px; left: 10px; right: 10px; justify-content: space-between;">
-                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" class="icon_button active" style="background-color: rgb(154, 59, 59);">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="back-to-menu" class="icon_button active" style="background-color: rgb(154, 59, 59);">
                     <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/exitLeft.png?fileID=2800000&amp;guid=9a7ff77fe7479f84aa6f3027afc79cd0&amp;type=3#exitLeft&apos;);" />
                     <ui:Label tabindex="-1" text="Back to menu" parse-escape-sequences="true" display-tooltip-when-elided="true" />
                     <ui:VisualElement class="tint" style="flex-grow: 0;" />
                 </ui:Button>
-                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" class="icon_button active" style="background-color: rgb(122, 157, 84);">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="play-again" class="icon_button active" style="background-color: rgb(122, 157, 84);">
                     <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/return.png?fileID=2800000&amp;guid=e0d869bb01aa29b47a258139bdad2f1e&amp;type=3#return&apos;);" />
                     <ui:Label tabindex="-1" text="Play again" parse-escape-sequences="true" display-tooltip-when-elided="true" />
                     <ui:VisualElement class="tint" style="flex-grow: 0;" />

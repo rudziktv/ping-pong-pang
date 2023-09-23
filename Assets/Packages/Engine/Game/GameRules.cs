@@ -5,12 +5,11 @@ using UnityEngine;
 [Serializable]
 public class GameRules
 {
-    public OutSide startSide;
+    public static OutSide startSide;
 
-    public int winScore = 12;
+    public static int winScore = 12;
 
-    [Range(1f, 10f)]
-    public float velocity;
+    public static float velocity;
 
-    public OutSide SecondSide => startSide == OutSide.left ? OutSide.right : OutSide.left;
+    public static OutSide SecondSide => startSide == OutSide.Left ? OutSide.Right : OutSide.Left;
 }

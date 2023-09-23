@@ -26,6 +26,6 @@ public class OutController : MonoBehaviour
 
 public enum OutSide
 {
-    left = 0,
-    right = 1,
+    Left = 0,
+    Right = 1,
 }

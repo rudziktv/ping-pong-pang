@@ -1,3 +1,4 @@
+using Assets.Packages.Engine.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,6 +10,9 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     UIDocument document;
 
+    [SerializeField]
+    WinScreenModel winScreenUI;
+
 
     Label player1Score;
     Label player2Score;
@@ -18,6 +22,8 @@ public class GameUI : MonoBehaviour
     {
         Instance = this;
 
+        winScreenUI.Initialize();
+
         player1Score = document.rootVisualElement.Q<Label>("player1");
         player2Score = document.rootVisualElement.Q<Label>("player2");
     }
@@ -25,9 +31,21 @@ public class GameUI : MonoBehaviour
 
     public void PlayerScore(OutSide side, int value)
     {
-        if (side == OutSide.left)
+        if (side == OutSide.Left)
             player1Score.text = value.ToString();
         else
             player2Score.text = value.ToString();
+    }
+
+
+    public void WinScreen()
+    {
+        winScreenUI.OpenWinScreen();
+    }
+
+
+    public void WinScreenClose()
+    {
+        winScreenUI.CloseWinScreen();
     }
 }

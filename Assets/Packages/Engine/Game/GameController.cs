@@ -8,9 +8,6 @@ public class GameController : MonoBehaviour
     [SerializeField]
     GameObjects objects;
 
-    [SerializeField]
-    GameRules rules;
-
     Rigidbody2D rb;
 
     int scorePlayer1;
@@ -19,8 +16,6 @@ public class GameController : MonoBehaviour
     public int Round => 1 + scorePlayer1 + scorePlayer2;
 
     private GameObject ball => objects.ball;
-
-    public GameRules Rules => rules;
 
 
     private void Awake()
@@ -48,7 +43,7 @@ public class GameController : MonoBehaviour
     {
         if (rb.velocity.magnitude > 0.1f)
         {
-            rb.velocity = rb.velocity.normalized * rules.velocity / rb.mass;
+            rb.velocity = rb.velocity.normalized * GameRules.velocity / rb.mass;
         }
     }
 
@@ -59,11 +54,11 @@ public class GameController : MonoBehaviour
 
         if ((r / 2) % 2 == 0)
         {
-            ServeBall(rules.SecondSide);
+            ServeBall(GameRules.SecondSide);
         }
         else
         {
-            ServeBall(rules.startSide);
+            ServeBall(GameRules.startSide);
         }
     }
 
@@ -74,13 +69,13 @@ public class GameController : MonoBehaviour
 
         switch (side)
         {
-            case OutSide.left:
+            case OutSide.Left:
                 ball.transform.position = objects.leftServe.position;
-                rb.AddForce(Vector2.right * rules.velocity, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.right * GameRules.velocity, ForceMode2D.Impulse);
                 break;
-            case OutSide.right:
+            case OutSide.Right:
                 ball.transform.position = objects.rightServe.position;
-                rb.AddForce(Vector2.left * rules.velocity, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.left * GameRules.velocity, ForceMode2D.Impulse);
                 break;
         }
     }
@@ -90,23 +85,32 @@ public class GameController : MonoBehaviour
     {
         switch (side)
         {
-            case OutSide.left:
+            case OutSide.Left:
                 scorePlayer2++;
                 break;
-            case OutSide.right:
+            case OutSide.Right:
                 scorePlayer1++;
                 break;
         }
 
         UpdateScoreUI();
 
-        if (scorePlayer1 >= rules.winScore || scorePlayer2 >= rules.winScore)
+        if (scorePlayer1 >= GameRules.winScore || scorePlayer2 >= GameRules.winScore)
         {
             WinSequence();
             return;
         }
 
         AudioController.Instance.PlayScore();
+    }
+
+
+    public void GameRestart(bool changeSide = false)
+    {
+        ScoreClear();
+
+        if (changeSide)
+            GameRules.startSide = GameRules.SecondSide;
     }
 
     
@@ -121,13 +125,17 @@ public class GameController : MonoBehaviour
 
     public void UpdateScoreUI()
     {
-        GameUI.Instance.PlayerScore(OutSide.left, scorePlayer1);
-        GameUI.Instance.PlayerScore(OutSide.right, scorePlayer2);
+        GameUI.Instance.PlayerScore(OutSide.Left, scorePlayer1);
+        GameUI.Instance.PlayerScore(OutSide.Right, scorePlayer2);
     }
 
 
     void WinSequence()
     {
         AudioController.Instance.PlayWin();
+
+        Time.timeScale = 0f;
+
+        GameUI.Instance.WinScreen();
     }
 }

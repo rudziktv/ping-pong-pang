@@ -14,7 +14,8 @@
     margin-left: 10px;
     margin-right: 0;
     margin-top: 7px;
-    margin-bottom: 0;
+    margin-bottom: 7px;
+    width: 300px;
 }
 
 .unity-slider__label {
@@ -22,4 +23,15 @@
     margin-right: 0;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.unity-toggle__input {
+    flex-direction: row-reverse;
+}
+
+.unity-base-slider__text-field {
+    -unity-text-align: upper-center;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
 }
