@@ -35,3 +35,7 @@
 #stats > .th {
     -unity-font-style: normal;
 }
+
+.hide-window {
+    scale: 0 0;
+}
