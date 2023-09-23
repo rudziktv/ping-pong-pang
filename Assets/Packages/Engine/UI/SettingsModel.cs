@@ -6,13 +6,13 @@ namespace Assets.Packages.Engine.UI
 {
     public class SettingsModel
     {
-        TemplateContainer tc;
+        VisualElement tc;
 
         Slider p1Sensitivity;
         Slider p2Sensitivity;
 
 
-        public SettingsModel(TemplateContainer tc)
+        public SettingsModel(VisualElement tc)
         {
             this.tc = tc;
 

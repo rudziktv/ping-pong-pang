@@ -17,6 +17,8 @@ namespace Assets.Packages.Engine.UI
 
         VisualElement root;
 
+        SettingsModel settingsModel;
+
         bool enabled;
 
         public bool Enabled => enabled;
@@ -30,6 +32,8 @@ namespace Assets.Packages.Engine.UI
             root.Q<Button>("menu").clicked += GameManager.Instance.LoadMainMenu;
 
             HidePauseMenu();
+
+            settingsModel = new(root.Q<VisualElement>("settings-view"));
         }
 
 
