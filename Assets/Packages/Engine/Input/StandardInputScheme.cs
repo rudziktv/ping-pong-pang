@@ -62,6 +62,15 @@ public partial class @StandardInputScheme: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""741b5f49-1127-4657-9731-8a97f9e82bbb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,17 @@ public partial class @StandardInputScheme: IInputActionCollection2, IDisposable
                     ""action"": ""TypeUpDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4fe19065-87c9-4141-9c85-c3a5aa7d74a2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +228,7 @@ public partial class @StandardInputScheme: IInputActionCollection2, IDisposable
         m_Player_TypeWS = m_Player.FindAction("TypeWS", throwIfNotFound: true);
         m_Player_TypeLeftRight = m_Player.FindAction("TypeLeftRight", throwIfNotFound: true);
         m_Player_TypeUpDown = m_Player.FindAction("TypeUpDown", throwIfNotFound: true);
+        m_Player_PauseMenu = m_Player.FindAction("PauseMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +294,7 @@ public partial class @StandardInputScheme: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_TypeWS;
     private readonly InputAction m_Player_TypeLeftRight;
     private readonly InputAction m_Player_TypeUpDown;
+    private readonly InputAction m_Player_PauseMenu;
     public struct PlayerActions
     {
         private @StandardInputScheme m_Wrapper;
@@ -281,6 +303,7 @@ public partial class @StandardInputScheme: IInputActionCollection2, IDisposable
         public InputAction @TypeWS => m_Wrapper.m_Player_TypeWS;
         public InputAction @TypeLeftRight => m_Wrapper.m_Player_TypeLeftRight;
         public InputAction @TypeUpDown => m_Wrapper.m_Player_TypeUpDown;
+        public InputAction @PauseMenu => m_Wrapper.m_Player_PauseMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,6 +325,9 @@ public partial class @StandardInputScheme: IInputActionCollection2, IDisposable
             @TypeUpDown.started += instance.OnTypeUpDown;
             @TypeUpDown.performed += instance.OnTypeUpDown;
             @TypeUpDown.canceled += instance.OnTypeUpDown;
+            @PauseMenu.started += instance.OnPauseMenu;
+            @PauseMenu.performed += instance.OnPauseMenu;
+            @PauseMenu.canceled += instance.OnPauseMenu;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -318,6 +344,9 @@ public partial class @StandardInputScheme: IInputActionCollection2, IDisposable
             @TypeUpDown.started -= instance.OnTypeUpDown;
             @TypeUpDown.performed -= instance.OnTypeUpDown;
             @TypeUpDown.canceled -= instance.OnTypeUpDown;
+            @PauseMenu.started -= instance.OnPauseMenu;
+            @PauseMenu.performed -= instance.OnPauseMenu;
+            @PauseMenu.canceled -= instance.OnPauseMenu;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -341,5 +370,6 @@ public partial class @StandardInputScheme: IInputActionCollection2, IDisposable
         void OnTypeWS(InputAction.CallbackContext context);
         void OnTypeLeftRight(InputAction.CallbackContext context);
         void OnTypeUpDown(InputAction.CallbackContext context);
+        void OnPauseMenu(InputAction.CallbackContext context);
     }
 }

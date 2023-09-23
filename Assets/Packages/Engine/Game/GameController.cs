@@ -29,8 +29,9 @@ public class GameController : MonoBehaviour
     {
         rb = ball.GetComponent<Rigidbody2D>();
 
-        ServeBall();
-        UpdateScoreUI();
+        
+
+        GameRestart();
     }
 
 
@@ -108,12 +109,13 @@ public class GameController : MonoBehaviour
 
     public void GameRestart(bool changeSide = false)
     {
-        Time.timeScale = 1f;
-
-        ScoreClear();
-
         objects.player1.CenterPlayer();
         objects.player2.CenterPlayer();
+
+        Time.timeScale = 0f;
+        
+        ScoreClear();
+        ServeBall();
 
         if (changeSide)
             GameRules.startSide = GameRules.SecondSide;

@@ -1,9 +1,5 @@
 ﻿using Assets.Packages.Engine.Game;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -25,13 +21,14 @@ namespace Assets.Packages.Engine.UI
         Label statsContacts;
 
 
-        public WinScreenModel()
-        {
-            Initialize();
-        }
+        bool enabled = false;
+
+        public bool Enabled => enabled;
 
         public void Initialize()
         {
+            if (document == null)
+                Debug.Log("DOC NULL");
             var root = document.rootVisualElement;
             window = root.Q<VisualElement>("window");
             scorePlayer1 = root.Q<Label>("scorePlayer1");
@@ -60,6 +57,7 @@ namespace Assets.Packages.Engine.UI
 
         public void OpenWinScreen()
         {
+            enabled = true;
             var stats = GameSession.Instance.Statistics;
 
             var score = GameController.Instance.GetScore;
@@ -104,6 +102,7 @@ namespace Assets.Packages.Engine.UI
         public void CloseWinScreen()
         {
             window.AddToClassList("hide-window");
+            enabled = false;
         }
     }
 }

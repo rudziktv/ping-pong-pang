@@ -4,3 +4,16 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.hide > #window {
+    scale: 0 0;
+}
+
+.root {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hide {
+    transition-delay: 0.7s;
+    background-color: rgba(0, 0, 0, 0);
+}
