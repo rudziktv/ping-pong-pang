@@ -24,6 +24,7 @@ public class MainMenuModel : MonoBehaviour
 
 
     VisualElement page;
+    Label version;
 
 
     private void Start()
@@ -41,6 +42,9 @@ public class MainMenuModel : MonoBehaviour
         var exitBtn = root.Q<Button>("exit-button");
 
         page = root.Q<VisualElement>("view-area");
+        version = root.Q<Label>("version");
+
+        version.text = Application.version;
 
 
         gameMenuUI = gameMenuAsset.Instantiate();
