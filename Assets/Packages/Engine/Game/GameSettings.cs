@@ -9,10 +9,12 @@ namespace Assets.Packages.Engine.Game
 {
     public static class GameSettings
     {
-		public delegate void SensitivityArgs(float sens);
+		public delegate void FloatArgs(float sens);
 
-		public static event SensitivityArgs P1SensitivityChanged;
-		public static event SensitivityArgs P2SensitivityChanged;
+		public static event FloatArgs P1SensitivityChanged;
+		public static event FloatArgs P2SensitivityChanged;
+		public static event FloatArgs SFXVolumeChanged;
+		public static event FloatArgs MusicVolumeChanged;
 
 
 		private static float _p1Sensitivity =
@@ -41,5 +43,32 @@ namespace Assets.Packages.Engine.Game
                 P2SensitivityChanged?.Invoke(P2Sensitivity);
             }
         }
+
+
+		private static float _sfxVolume;
+
+		public static float SFXVolume
+		{
+			get { return _sfxVolume; }
+			set
+			{ 
+				_sfxVolume = value;
+				SFXVolumeChanged?.Invoke(SFXVolume);
+			}
+		}
+
+
+		private static float _musicVolume;
+
+		public static float MusicVolume
+		{
+			get { return _musicVolume; }
+			set
+			{ 
+				_musicVolume = value;
+				MusicVolumeChanged?.Invoke(MusicVolume);
+			}
+		}
+
 	}
 }

@@ -24,6 +24,13 @@ namespace Assets.Packages.Engine.Game
         private void Start()
         {
             lastFramePos = transform.position;
+            audioSource.volume = GameSettings.SFXVolume;
+            GameSettings.SFXVolumeChanged += SFXVolumeChanged;
+        }
+
+        private void SFXVolumeChanged(float sens)
+        {
+            audioSource.volume = sens;
         }
 
 

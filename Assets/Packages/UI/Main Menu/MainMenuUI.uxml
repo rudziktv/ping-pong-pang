@@ -11,6 +11,10 @@
                 <ui:VisualElement class="icon" style="flex-grow: 1; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/gear.png?fileID=2800000&amp;guid=f412124db31b876449ed5684bc998b89&amp;type=3#gear&apos;);" />
                 <ui:VisualElement class="tint" style="flex-grow: 1;" />
             </ui:Button>
+            <ui:Button text="Credits" parse-escape-sequences="true" display-tooltip-when-elided="true" name="credits">
+                <ui:VisualElement class="icon" style="flex-grow: 1; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/information.png?fileID=2800000&amp;guid=bd3bebc24e837e3479e39b531426f304&amp;type=3#information&apos;);" />
+                <ui:VisualElement class="tint" style="flex-grow: 1;" />
+            </ui:Button>
             <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit-button" style="background-color: rgb(154, 59, 59);">
                 <ui:VisualElement class="icon" style="flex-grow: 1; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/exit.png?fileID=2800000&amp;guid=9d5f87704ce48f44fb62ee8572c560fc&amp;type=3#exit&apos;);" />
                 <ui:VisualElement class="tint" style="flex-grow: 1;" />

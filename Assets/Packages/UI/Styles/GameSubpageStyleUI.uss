@@ -35,3 +35,24 @@
     justify-content: center;
     width: 90px;
 }
+
+.settings-header {
+    -unity-font-style: bold;
+    font-size: 36px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.settings-header__icon {
+    flex-grow: 0;
+    background-image: url('project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/gamepad.png?fileID=2800000&guid=c13d4ac28dd5184449e527898a86de91&type=3#gamepad');
+    width: 56px;
+    height: 56px;
+    margin-right: 24px;
+}

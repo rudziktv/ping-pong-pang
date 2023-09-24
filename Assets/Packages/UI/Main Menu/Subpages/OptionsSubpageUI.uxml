@@ -4,11 +4,28 @@
     <ui:VisualElement name="root" class="animated-root" style="width: 100%; height: 100%; background-color: rgb(70, 94, 125); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; color: rgb(255, 255, 255); font-size: 20px;">
         <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px;">
             <ui:VisualElement style="flex-grow: 1;">
+                <ui:VisualElement class="settings-header" style="flex-grow: 1;">
+                    <ui:VisualElement name="icon" class="settings-header__icon" />
+                    <ui:Label tabindex="-1" text="Controls" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1;">
                     <ui:Slider picking-mode="Ignore" label="Player 1 Sensitivity" value="0.05" high-value="0.25" low-value="0.01" show-input-field="true" tooltip="Speed of ball" focusable="true" name="player1sens" style="color: rgb(255, 255, 255);" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1;">
                     <ui:Slider picking-mode="Ignore" label="Player 2 Sensitivity" value="0.05" high-value="0.25" low-value="0.01" show-input-field="true" tooltip="Speed of ball" focusable="true" name="player2sens" style="color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement class="settings-header" style="flex-grow: 1;">
+                    <ui:VisualElement name="icon" class="settings-header__icon" style="background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/musicOn.png?fileID=2800000&amp;guid=4fdde928ffdb7f04e9ebcf736bc13e7e&amp;type=3#musicOn&apos;);" />
+                    <ui:Label tabindex="-1" text="Sounds" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:Slider picking-mode="Ignore" label="Master Volume" value="0.5" high-value="1" low-value="0" show-input-field="true" focusable="true" name="sound-master" style="color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:Slider picking-mode="Ignore" label="SFX Volume" value="0.5" high-value="1" low-value="0" show-input-field="true" focusable="true" name="sound-sfx" style="color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:Slider picking-mode="Ignore" label="Music Volume" value="0.5" high-value="1" low-value="0" show-input-field="true" focusable="true" name="sound-music" style="color: rgb(255, 255, 255);" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 0; align-items: flex-end; margin-top: 15px; padding-left: 5px; padding-right: 5px;">
                     <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="reset" class="icon_button" style="background-color: rgb(154, 59, 59); align-items: center;">
