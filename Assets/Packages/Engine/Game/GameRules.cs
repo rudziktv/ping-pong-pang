@@ -5,15 +5,15 @@ using UnityEngine;
 [Serializable]
 public class GameRules
 {
-    public static OutSide startSide;
+    public static OutSide startSide = OutSide.Left;
 
-    public static int winScore = 12;
+    public static int winScore = 3;
 
-    public static float velocity;
+    public static float velocity = 2f;
 
-    public static bool accelerationOverTime;
+    public static bool accelerationOverTime = false;
 
-    public static float accelerationRate;
+    public static float accelerationRate = 0f;
 
     public static OutSide SecondSide => startSide == OutSide.Left ? OutSide.Right : OutSide.Left;
 }

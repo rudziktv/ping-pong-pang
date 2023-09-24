@@ -22,7 +22,8 @@ public class GameController : MonoBehaviour
 
     public int Round => 1 + scorePlayer1 + scorePlayer2;
 
-    private GameObject ball => objects.ball;
+    public GameObject Ball => objects.ball;
+    public Rigidbody2D BallRb => rb;
 
 
     private void Awake()
@@ -33,7 +34,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        rb = ball.GetComponent<Rigidbody2D>();
+        rb = Ball.GetComponent<Rigidbody2D>();
 
         
 
@@ -51,14 +52,12 @@ public class GameController : MonoBehaviour
     {
         if (GameRules.accelerationOverTime)
         {
-            roundTimer += Time.deltaTime;
+            roundTimer += Time.fixedDeltaTime;
         }
     }
 
     void KeepVelocity()
     {
-        
-
         if (rb.velocity.magnitude > 0.1f)
         {
             rb.velocity = rb.velocity.normalized * GameRules.velocity / rb.mass
@@ -89,11 +88,11 @@ public class GameController : MonoBehaviour
         switch (side)
         {
             case OutSide.Left:
-                ball.transform.position = objects.leftServe.position;
+                Ball.transform.position = objects.leftServe.position;
                 rb.AddForce(Vector2.right * GameRules.velocity, ForceMode2D.Impulse);
                 break;
             case OutSide.Right:
-                ball.transform.position = objects.rightServe.position;
+                Ball.transform.position = objects.rightServe.position;
                 rb.AddForce(Vector2.left * GameRules.velocity, ForceMode2D.Impulse);
                 break;
         }
