@@ -48,4 +48,9 @@ public class AudioController : MonoBehaviour
     {
         audioSource.PlayOneShot(winClip);
     }
+
+    private void OnDestroy()
+    {
+        GameSettings.SFXVolumeChanged -= SFXVolumeChanged;
+    }
 }

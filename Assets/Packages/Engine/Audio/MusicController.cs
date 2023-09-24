@@ -35,6 +35,8 @@ namespace Assets.Packages.Engine.Audio
 
         private void PlayQueue()
         {
+            if (audioSource == null)
+                return;
             audioSource.clip = playerQueue[current];
             audioSource.Play();
             StartCoroutine(nameof(WaitUntilEndOfSong));
@@ -45,13 +47,22 @@ namespace Assets.Packages.Engine.Audio
             current++;
             if (current >= playerQueue.Length)
                 current = 0;
-            yield return new WaitUntil(() => !audioSource.isPlaying);
+            yield return new WaitUntil(() => {
+                if (audioSource != null)
+                    return !audioSource.isPlaying;
+                return true;
+            });
             PlayQueue();
         }
 
         private void MusicVolumeChanged(float sens)
         {
             audioSource.volume = sens * 0.5f;
+        }
+
+        private void OnDestroy()
+        {
+            GameSettings.MusicVolumeChanged -= MusicVolumeChanged;
         }
     }
 }

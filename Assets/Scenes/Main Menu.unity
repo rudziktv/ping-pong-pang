@@ -514,10 +514,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1614145699}
   playerQueue:
-  - {fileID: 8300000, guid: 10538c3ce031fa54f99562b99027ad1e, type: 3}
   - {fileID: 8300000, guid: 130cd6ee3a0f49c438cd96973b95b8e4, type: 3}
   - {fileID: 8300000, guid: 921273f1a207f9f489a36f06fdb1a3e7, type: 3}
   - {fileID: 8300000, guid: 868f994d51ff31240a290c41446d6ae9, type: 3}
+  - {fileID: 8300000, guid: 10538c3ce031fa54f99562b99027ad1e, type: 3}
   randomize: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

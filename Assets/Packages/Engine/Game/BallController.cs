@@ -39,5 +39,10 @@ namespace Assets.Packages.Engine.Game
             GameSession.Instance.AddDistance((lastFramePos - transform.position).magnitude);
             lastFramePos = transform.position;
         }
+
+        private void OnDestroy()
+        {
+            GameSettings.SFXVolumeChanged -= SFXVolumeChanged;
+        }
     }
 }
