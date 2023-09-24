@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Packages/UI/Styles/IndexStyleUI.uss?fileID=7433441132597879392&amp;guid=df7dfbb796c07e343b45c1034650e27c&amp;type=3#IndexStyleUI" />
+    <Style src="project://database/Assets/Packages/UI/Styles/GameSubpageStyleUI.uss?fileID=7433441132597879392&amp;guid=574d6c71e2d0b5d40a58c17eef08692f&amp;type=3#GameSubpageStyleUI" />
+    <ui:VisualElement name="root" style="flex-grow: 1; background-color: rgb(70, 94, 125); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; color: rgb(255, 255, 255);">
+        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" horizontal-scroller-visibility="Hidden" style="-unity-text-align: upper-left; font-size: 24px;">
+            <ui:VisualElement class="settings-header" style="flex-grow: 1;">
+                <ui:VisualElement class="settings-header__icon" />
+                <ui:Label tabindex="-1" text="Programmer" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+            <ui:VisualElement class="credit-paragraph" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="Krzysztof Skórzyński" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+            <ui:VisualElement class="settings-header" style="flex-grow: 1;">
+                <ui:VisualElement class="settings-header__icon" style="background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/PNG/White/2x/flag.png?fileID=2800000&amp;guid=a106ad1a84048d844b73aea1e1e82263&amp;type=3#flag&apos;);" />
+                <ui:Label tabindex="-1" text="Assets" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" />
+            </ui:VisualElement>
+            <ui:VisualElement class="credit-paragraph" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="kenney.nl" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+            <ui:VisualElement class="settings-header" style="flex-grow: 1;">
+                <ui:VisualElement class="settings-header__icon" style="background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/musicOn.png?fileID=2800000&amp;guid=4fdde928ffdb7f04e9ebcf736bc13e7e&amp;type=3#musicOn&apos;);" />
+                <ui:Label tabindex="-1" text="Music" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+            <ui:VisualElement class="credit-paragraph" style="flex-grow: 1; font-size: 18px;">
+                <ui:Label tabindex="-1" text="Song: Daniel Levi - Honey [NCS Release]&#10;Music provided by NoCopyrightSounds&#10;Free Download/Stream: http://ncs.io/DL\_Honey&#10;Watch: http://ncs.lnk.to/DL\_HoneyAT/youtube" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:Label tabindex="-1" text="Song: OSKI - Stay The Night [NCS Release]&#10;Music provided by NoCopyrightSounds&#10;Free Download/Stream: http://ncs.io/staythenight&#10;Watch: http://ncs.lnk.to/staythenightAT/youtube" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:Label tabindex="-1" text="Song: Outlandr - Overcome [Arcade Release]&#10;Music provided by NoCopyrightSounds&#10;Free Download/Stream: http://ncs.io/&#10;Watch: http://ncs.lnk.to/AT/youtube" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:Label tabindex="-1" text="Song: hayve - Half Alive (feat. imallryt) [NCS Release]&#10;Music provided by NoCopyrightSounds&#10;Free Download/Stream: http://NCS.io/HalfAlive&#10;Watch: http://youtu.be/xD822NexBkE" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

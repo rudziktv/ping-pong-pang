@@ -56,3 +56,7 @@
     height: 56px;
     margin-right: 24px;
 }
+
+.credit-paragraph {
+    padding-left: 50px;
+}

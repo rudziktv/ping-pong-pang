@@ -15,9 +15,13 @@ public class MainMenuModel : MonoBehaviour
     [SerializeField]
     VisualTreeAsset settingsAsset;
 
+    [SerializeField]
+    VisualTreeAsset credits;
+
 
     TemplateContainer gameMenuUI;
     TemplateContainer settingsUI;
+    TemplateContainer creditsUI;
 
     GameSubpageModel gameSubpageModel;
     SettingsModel settingsModel;
@@ -39,6 +43,7 @@ public class MainMenuModel : MonoBehaviour
 
         var gameBtn = root.Q<Button>("game-menu");
         var settingsBtn = root.Q<Button>("settings-menu");
+        root.Q<Button>("credits").clicked += CreditsShow;
         var exitBtn = root.Q<Button>("exit-button");
 
         page = root.Q<VisualElement>("view-area");
@@ -55,6 +60,9 @@ public class MainMenuModel : MonoBehaviour
         settingsUI = settingsAsset.Instantiate();
         UIHelper.InitializeRoot(settingsUI);
 
+        creditsUI = credits.Instantiate();
+        UIHelper.InitializeRoot(creditsUI);
+
         settingsModel = new(settingsUI);
 
 
@@ -63,10 +71,22 @@ public class MainMenuModel : MonoBehaviour
         exitBtn.clicked += Application.Quit;
     }
 
+    private void CreditsShow()
+    {
+        page.Clear();
+        UIHelper.HideRoot(gameMenuUI);
+        UIHelper.HideRoot(settingsUI);
+
+        page.Add(creditsUI);
+        UIHelper.ShowRoot(creditsUI);
+
+    }
+
     private void OpenSettings()
     {
         page.Clear();
         UIHelper.HideRoot(gameMenuUI);
+        UIHelper.HideRoot(creditsUI);
 
         page.Add(settingsUI);
         UIHelper.ShowRoot(settingsUI);
@@ -76,6 +96,7 @@ public class MainMenuModel : MonoBehaviour
     {
         page.Clear();
         UIHelper.HideRoot(settingsUI);
+        UIHelper.HideRoot(creditsUI);
 
         page.Add(gameMenuUI);
 

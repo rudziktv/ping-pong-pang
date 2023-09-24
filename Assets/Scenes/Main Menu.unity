@@ -187,6 +187,7 @@ MonoBehaviour:
   document: {fileID: 144123756}
   gameMenuAsset: {fileID: 9197481963319205126, guid: bd15fb9cc15633e4197f9125fc12aa34, type: 3}
   settingsAsset: {fileID: 9197481963319205126, guid: 317d185650a666841b18177931a11441, type: 3}
+  credits: {fileID: 9197481963319205126, guid: 33909a67a414c9a4382dd3aaa3764dde, type: 3}
 --- !u!1 &359497774
 GameObject:
   m_ObjectHideFlags: 0
