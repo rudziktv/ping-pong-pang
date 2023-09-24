@@ -34,6 +34,8 @@ namespace Assets.Packages.Engine.UI
             HidePauseMenu();
 
             settingsModel = new(root.Q<VisualElement>("settings-view"));
+
+            UIHelper.ButtonClickSoundSubscribe(root);
         }
 
 

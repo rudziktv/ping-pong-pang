@@ -1,3 +1,4 @@
+using Assets.Packages.Engine.Audio;
 using Assets.Packages.Engine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -78,6 +79,8 @@ public class MainMenuModel : MonoBehaviour
         gameBtn.clicked += OpenGameMenu;
         settingsBtn.clicked += OpenSettings;
         exitBtn.clicked += Application.Quit;
+
+        UIHelper.ButtonClickSoundSubscribe(root);
     }
 
     private void CreditsShow()

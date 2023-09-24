@@ -31,6 +31,8 @@ namespace Assets.Packages.Engine.UI
 
             var playBtn = tc.Q<Button>("start-game");
             playBtn.clicked += PlayButton;
+
+            UIHelper.ButtonClickSoundSubscribe(tc);
         }
 
         private void PlayButton()

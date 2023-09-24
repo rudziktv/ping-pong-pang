@@ -26,6 +26,8 @@ namespace Assets.Packages.Engine.UI
             AudioListener.volume = masterVolume.value;
             GameSettings.SFXVolume = sfxVolume.value;
             GameSettings.MusicVolume = musicVolume.value;
+
+            UIHelper.ButtonClickSoundSubscribe(tc);
         }
 
         private void LoadPreferences()

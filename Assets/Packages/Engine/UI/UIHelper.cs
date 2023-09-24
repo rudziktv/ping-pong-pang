@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Packages.Engine.Audio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,12 @@ namespace Assets.Packages.Engine.UI
         public static void HideRoot(VisualElement ve)
         {
             ve.Q<VisualElement>("root").AddToClassList("hide-root");
+        }
+
+
+        public static void ButtonClickSoundSubscribe(VisualElement root)
+        {
+            root.Query<Button>().ForEach((btn) => btn.clicked += AudioUI.Instance.PlayButtonClick);
         }
     }
 }
