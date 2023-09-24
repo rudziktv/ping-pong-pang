@@ -35,7 +35,7 @@ namespace Assets.Packages.Engine.UI
 
             masterVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MASTER_VOLUME, 0.5f);
             sfxVolume.value = PlayerPrefs.GetFloat(SettingsKeys.SFX_VOLUME, 1f);
-            musicVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MUSIC_VOLUME, 0.75f);
+            musicVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MUSIC_VOLUME, 0.25f);
         }
 
         private void SubscirbeEvents()
