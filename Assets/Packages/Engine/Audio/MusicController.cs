@@ -55,6 +55,7 @@ namespace Assets.Packages.Engine.Audio
             if (audioSource == null)
                 return;
             audioSource.clip = playerQueue[currentIndex];
+            audioSource.time = 0f;
             audioSource.Play();
             StartCoroutine(nameof(WaitUntilEndOfSong));
         }
