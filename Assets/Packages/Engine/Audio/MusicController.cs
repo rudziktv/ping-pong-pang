@@ -52,22 +52,17 @@ namespace Assets.Packages.Engine.Audio
 
         private void PlayQueue()
         {
-            if (audioSource == null)
-                return;
+            audioSource.Stop();
             audioSource.clip = playerQueue[currentIndex];
             audioSource.time = 0f;
             audioSource.Play();
+            StopAllCoroutines();
             StartCoroutine(nameof(WaitUntilEndOfSong));
         }
 
         IEnumerator WaitUntilEndOfSong()
         {
-            yield return new WaitUntil(() =>
-            {
-                if (audioSource != null)
-                    return !audioSource.isPlaying;
-                return true;
-            });
+            yield return new WaitUntil(() => !audioSource.isPlaying);
             NextSong();
             PlayQueue();
         }
