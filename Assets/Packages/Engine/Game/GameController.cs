@@ -145,7 +145,8 @@ public class GameController : MonoBehaviour
     IEnumerator UnfreezeGame()
     {
         yield return new WaitForSecondsRealtime(2);
-        Time.timeScale = 1f;
+        if (!GameUI.Instance.GamePaused)
+            Time.timeScale = 1f;
     }
 
     

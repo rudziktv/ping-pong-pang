@@ -21,6 +21,8 @@ public class GameUI : MonoBehaviour
     Label player1Score;
     Label player2Score;
 
+    public bool GamePaused => pauseMenuUI.Enabled;
+
     private void Awake()
     {
         Instance = this;
