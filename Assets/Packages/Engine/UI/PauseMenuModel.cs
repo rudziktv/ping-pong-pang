@@ -39,6 +39,7 @@ namespace Assets.Packages.Engine.UI
 
         public void ShowPauseMenu()
         {
+            pauseUI.panelSettings.sortingOrder = 3;
             enabled = true;
             root.RemoveFromClassList("hide");
         }
@@ -46,6 +47,7 @@ namespace Assets.Packages.Engine.UI
 
         public void HidePauseMenu()
         {
+            pauseUI.panelSettings.sortingOrder = 0;
             enabled = false;
             root.AddToClassList("hide");
         }

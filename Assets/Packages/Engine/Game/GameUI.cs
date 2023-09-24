@@ -81,7 +81,6 @@ public class GameUI : MonoBehaviour
     public void PauseMenuClose()
     {
         pauseMenuUI.HidePauseMenu();
-        //Time.timeScale = 1f;
         StartCoroutine(WaitSequenceClose());
     }
 
@@ -90,6 +89,5 @@ public class GameUI : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1);
         Time.timeScale = 1f;
-        yield return null;
     }
 }
