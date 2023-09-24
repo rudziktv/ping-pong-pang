@@ -3,7 +3,7 @@
     <Style src="project://database/Assets/Packages/UI/Styles/PauseMenuStyleUI.uss?fileID=7433441132597879392&amp;guid=9483f6a3e56720b43b20377b577c643f&amp;type=3#PauseMenuStyleUI" />
     <Style src="project://database/Assets/Packages/UI/Styles/GameSubpageStyleUI.uss?fileID=7433441132597879392&amp;guid=574d6c71e2d0b5d40a58c17eef08692f&amp;type=3#GameSubpageStyleUI" />
     <ui:VisualElement name="root" class="root" style="flex-grow: 1; flex-direction: row; justify-content: center; transition-duration: 0.2s;">
-        <ui:VisualElement name="window" style="flex-grow: 1; flex-direction: row; justify-content: center; transition-property: scale; transition-timing-function: ease-out-elastic; transition-duration: 0.7s; transition-delay: 0.2s;">
+        <ui:VisualElement name="window" style="flex-grow: 1; flex-direction: row; justify-content: center; transition-property: scale; transition-timing-function: ease-out-elastic; transition-duration: 0.7s; transition-delay: 0.2s; align-items: center;">
             <ui:VisualElement name="button-container" style="flex-grow: 0; align-items: flex-end; justify-content: center;">
                 <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="resume" class="icon_button" style="background-color: rgb(122, 157, 84); align-items: center;">
                     <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/right.png?fileID=2800000&amp;guid=a7615f000ad116b4b9db5ebc6b0b0083&amp;type=3#right&apos;);" />
@@ -14,12 +14,12 @@
                     <ui:VisualElement class="tint" style="flex-grow: 0;" />
                 </ui:Button>
             </ui:VisualElement>
-            <ui:VisualElement name="view-container" style="flex-grow: 1; padding-left: 50px; padding-right: 50px; padding-top: 25px; padding-bottom: 50px; align-items: center;">
+            <ui:VisualElement name="view-container" style="padding-left: 50px; padding-right: 50px; padding-top: 25px; padding-bottom: 50px; align-items: center; max-height: 800px; max-width: 800px; width: 100%; height: 100%;">
                 <ui:VisualElement style="flex-grow: 0; flex-direction: row; align-items: center; margin-bottom: 25px;">
                     <ui:VisualElement name="VisualElement" class="icon" style="flex-grow: 0; width: 96px; height: 96px; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/gear.png?fileID=2800000&amp;guid=d34e3fee6fd246540ab419d655c57332&amp;type=3#gear&apos;); position: relative; margin-right: 7px;" />
                     <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); font-size: 48px;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="settings-view" style="flex-grow: 0; align-items: stretch; width: 100%; background-color: rgb(70, 94, 125); height: 100%; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; max-width: 1000px; max-height: 1000px;">
+                <ui:VisualElement name="settings-view" style="align-items: stretch; width: 100%; background-color: rgb(70, 94, 125); height: 100%; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
                     <ui:VisualElement class="settings-header">
                         <ui:VisualElement name="icon" class="settings-header__icon" />
                         <ui:Label tabindex="-1" text="Controls" parse-escape-sequences="true" display-tooltip-when-elided="true" />
