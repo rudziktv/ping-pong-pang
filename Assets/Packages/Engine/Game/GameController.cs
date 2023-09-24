@@ -25,19 +25,18 @@ public class GameController : MonoBehaviour
     public GameObject Ball => objects.ball;
     public Rigidbody2D BallRb => rb;
 
+    public float IntentionalVelocity => Acceleration + GameRules.velocity / rb.mass;
+
 
     private void Awake()
     {
         Instance = this;
+        rb = Ball.GetComponent<Rigidbody2D>();
     }
 
 
     private void Start()
     {
-        rb = Ball.GetComponent<Rigidbody2D>();
-
-        
-
         GameRestart();
     }
 
