@@ -29,7 +29,6 @@ public class MainMenuModel : MonoBehaviour
     Label version;
     Label productName;
     Label author;
-    Label build;
 
 
     private void Start()
@@ -51,12 +50,10 @@ public class MainMenuModel : MonoBehaviour
         version = root.Q<Label>("version");
         productName = root.Q<Label>("product-name");
         author = root.Q<Label>("author");
-        build = root.Q<Label>("build");
 
-        version.text = Application.version;
+        version.text = $"{Application.version} - {Application.buildGUID}";
         productName.text = Application.productName;
         author.text = Application.companyName;
-        build.text = Application.buildGUID;
 
 
         gameMenuUI = gameMenuAsset.Instantiate();
