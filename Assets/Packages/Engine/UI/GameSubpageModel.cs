@@ -14,6 +14,7 @@ namespace Assets.Packages.Engine.UI
         EnumField initialServe;
         Slider initialVelocity;
         Toggle acceleration;
+        Slider accelerationRate;
 
 
         public GameSubpageModel(TemplateContainer tc)
@@ -24,6 +25,7 @@ namespace Assets.Packages.Engine.UI
             initialServe = tc.Q<EnumField>("initServe");
             initialVelocity = tc.Q<Slider>("initVelSet");
             acceleration = tc.Q<Toggle>("accelerationSet");
+            accelerationRate = tc.Q<Slider>("accelerationRate");
 
             tc.Q<Button>("side-by-side").SetEnabled(false);
 
@@ -43,6 +45,7 @@ namespace Assets.Packages.Engine.UI
             GameRules.velocity = initialVelocity.value;
             GameRules.startSide = (OutSide)initialServe.value;
             GameRules.accelerationOverTime = acceleration.value;
+            GameRules.accelerationRate = accelerationRate.value;
         }
     }
 }

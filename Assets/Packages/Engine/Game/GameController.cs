@@ -14,6 +14,12 @@ public class GameController : MonoBehaviour
     int scorePlayer1;
     int scorePlayer2;
 
+    float roundTimer;
+
+    float Acceleration => GameRules.accelerationOverTime ?
+        roundTimer * GameRules.accelerationRate / 60f
+        : 0f;
+
     public int Round => 1 + scorePlayer1 + scorePlayer2;
 
     private GameObject ball => objects.ball;
@@ -37,15 +43,26 @@ public class GameController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        AccelerationTimer();
         KeepVelocity();
     }
 
+    private void AccelerationTimer()
+    {
+        if (GameRules.accelerationOverTime)
+        {
+            roundTimer += Time.deltaTime;
+        }
+    }
 
     void KeepVelocity()
     {
+        
+
         if (rb.velocity.magnitude > 0.1f)
         {
-            rb.velocity = rb.velocity.normalized * GameRules.velocity / rb.mass;
+            rb.velocity = rb.velocity.normalized * GameRules.velocity / rb.mass
+                + rb.velocity.normalized * Acceleration;
         }
     }
 
@@ -96,6 +113,8 @@ public class GameController : MonoBehaviour
         }
 
         UpdateScoreUI();
+
+        roundTimer = 0f;
 
         if (scorePlayer1 >= GameRules.winScore || scorePlayer2 >= GameRules.winScore)
         {
