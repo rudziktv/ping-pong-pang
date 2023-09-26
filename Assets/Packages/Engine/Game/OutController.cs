@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class OutController : MonoBehaviour
@@ -14,17 +13,7 @@ public class OutController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             outDetected?.Invoke(side);
-
-            //GameController.Instance.Score(side);
-            //StartCoroutine(nameof(OutCoroutine));
         }
-    }
-
-
-    IEnumerator OutCoroutine()
-    {
-        yield return new WaitForSeconds(2);
-        GameController.Instance.ServeBall();
     }
 }
 
