@@ -27,6 +27,11 @@ namespace Assets.Packages.Engine.UI
             acceleration = tc.Q<Toggle>("accelerationSet");
             accelerationRate = tc.Q<Slider>("accelerationRate");
 
+            winScore.RegisterValueChangedCallback((args) =>
+            {
+                winScore.value = args.newValue < 0 ? 0 : args.newValue;
+            });
+
             tc.Q<Button>("side-by-side").SetEnabled(false);
 
             var playBtn = tc.Q<Button>("start-game");
