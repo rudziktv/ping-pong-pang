@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class OutController : MonoBehaviour
 {
+    public delegate void OutArgs(OutSide side);
+    public event OutArgs outDetected;
+
     [SerializeField]
     OutSide side;
 
@@ -10,8 +13,10 @@ public class OutController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            GameController.Instance.Score(side);
-            StartCoroutine(nameof(OutCoroutine));
+            outDetected?.Invoke(side);
+
+            //GameController.Instance.Score(side);
+            //StartCoroutine(nameof(OutCoroutine));
         }
     }
 

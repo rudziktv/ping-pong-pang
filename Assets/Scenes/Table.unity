@@ -3685,6 +3685,9 @@ MonoBehaviour:
     rightServe: {fileID: 281716021}
     player1: {fileID: 1817649426}
     player2: {fileID: 1725114032}
+    outs:
+    - {fileID: 1222895918}
+    - {fileID: 1801483935}
 --- !u!1001 &3954039946773988808
 PrefabInstance:
   m_ObjectHideFlags: 0
