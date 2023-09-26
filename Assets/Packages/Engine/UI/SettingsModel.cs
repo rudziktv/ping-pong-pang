@@ -1,4 +1,5 @@
 ﻿using Assets.Packages.Engine.Game;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -15,9 +16,15 @@ namespace Assets.Packages.Engine.UI
         Slider sfxVolume;
         Slider musicVolume;
 
+        EnumField fullscreenMode;
+        DropdownField display;
 
-        public SettingsModel(VisualElement tc)
+        bool displaySettings;
+
+
+        public SettingsModel(VisualElement tc, bool displaySettings = false)
         {
+            this.displaySettings = displaySettings;
             this.tc = tc;
             InitializeUI();
             SubscirbeEvents();
@@ -38,6 +45,11 @@ namespace Assets.Packages.Engine.UI
             masterVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MASTER_VOLUME, 0.5f);
             sfxVolume.value = PlayerPrefs.GetFloat(SettingsKeys.SFX_VOLUME, 1f);
             musicVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MUSIC_VOLUME, 0.25f);
+
+            if (displaySettings)
+            {
+
+            }
         }
 
         private void SubscirbeEvents()
@@ -89,6 +101,21 @@ namespace Assets.Packages.Engine.UI
 
 
             tc.Q<Button>("reset").clicked += ResetPrefs;
+
+            if (displaySettings)
+            {
+                display.RegisterValueChangedCallback((display) =>
+                {
+                    
+                });
+                //Display.onDisplaysUpdated += DisplaysUpdate;
+                
+            }
+        }
+
+        private void DisplaysUpdate()
+        {
+            throw new System.NotImplementedException();
         }
 
         private void InitializeUI()
@@ -99,6 +126,12 @@ namespace Assets.Packages.Engine.UI
             masterVolume = tc.Q<Slider>("sound-master");
             sfxVolume = tc.Q<Slider>("sound-sfx");
             musicVolume = tc.Q<Slider>("sound-music");
+
+            if (displaySettings)
+            {
+                display = tc.Q<DropdownField>("select-display");
+                display.choices = Display.displays.Select((dsp, i) => $"Display {i+1}").ToList();
+            }
         }
 
         private void ResetPrefs()

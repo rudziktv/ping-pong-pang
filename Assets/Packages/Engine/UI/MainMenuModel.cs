@@ -67,7 +67,7 @@ public class MainMenuModel : MonoBehaviour
         creditsUI = credits.Instantiate();
         UIHelper.InitializeRoot(creditsUI);
 
-        settingsModel = new(settingsUI);
+        settingsModel = new(settingsUI, true);
 
 
         gameBtn.clicked += OpenGameMenu;

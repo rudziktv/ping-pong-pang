@@ -27,6 +27,16 @@
                 <ui:VisualElement style="flex-grow: 1;">
                     <ui:Slider picking-mode="Ignore" label="Music Volume" value="0.5" high-value="1" low-value="0" show-input-field="true" focusable="true" name="sound-music" style="color: rgb(255, 255, 255);" />
                 </ui:VisualElement>
+                <ui:VisualElement class="settings-header" style="flex-grow: 1;">
+                    <ui:VisualElement name="icon" class="settings-header__icon" style="background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/movie.png?fileID=2800000&amp;guid=314bfa942dbc6ee40baf07273d397f10&amp;type=3#movie&apos;);" />
+                    <ui:Label tabindex="-1" text="Graphics" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:EnumField label="Display mode" type="UnityEngine.FullScreenMode, UnityEngine.CoreModule" name="display-mode" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
+                    <ui:DropdownField label="Select display" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="select-display" />
+                </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 0; align-items: flex-end; margin-top: 15px; padding-left: 5px; padding-right: 5px;">
                     <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="reset" class="icon_button" style="background-color: rgb(154, 59, 59); align-items: center;">
                         <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/save.png?fileID=2800000&amp;guid=0bb49e000492f404e9d7dca5e4804c3c&amp;type=3#save&apos;);" />
