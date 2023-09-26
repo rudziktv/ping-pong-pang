@@ -1,4 +1,5 @@
 ﻿using Assets.Packages.Engine.Game;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -131,6 +132,7 @@ namespace Assets.Packages.Engine.UI
             {
                 display = tc.Q<DropdownField>("select-display");
                 display.choices = Display.displays.Select((dsp, i) => $"Display {i+1}").ToList();
+                display.index = Array.IndexOf(Display.displays, Display.main);
             }
         }
 
