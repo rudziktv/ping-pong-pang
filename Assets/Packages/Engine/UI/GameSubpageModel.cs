@@ -63,6 +63,16 @@ namespace Assets.Packages.Engine.UI
                 PlayerPrefs.SetFloat(SettingsKeys.ACCELERATION_RATE, args.newValue);
                 PlayerPrefs.Save();
             });
+
+            SettingsModel.RestoreDefault += RestoreDefaultValues;
+        }
+
+        private void RestoreDefaultValues()
+        {
+            winScore.value = DefaultRules.WIN_SCORE;
+            initialVelocity.value = DefaultRules.INIT_VELOCITY;
+            acceleration.value = DefaultRules.ACCELERATION_ENABLED;
+            accelerationRate.value = DefaultRules.ACCELERATION_RATE;
         }
 
         private void InitializeUI()
