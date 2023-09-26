@@ -1,6 +1,7 @@
 ﻿using Assets.Packages.Engine.Game;
 using System;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -107,7 +108,8 @@ namespace Assets.Packages.Engine.UI
             {
                 display.RegisterValueChangedCallback((display) =>
                 {
-                    
+                    int selectedIndex = int.Parse(display.newValue.Split(' ')[1]) - 1;
+                    Display.displays[selectedIndex].Activate();
                 });
                 //Display.onDisplaysUpdated += DisplaysUpdate;
                 
