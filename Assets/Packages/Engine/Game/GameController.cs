@@ -141,6 +141,7 @@ public class GameController : MonoBehaviour
     IEnumerator ResetBallPosition()
     {
         reseting = true;
+        RecenterPlayers();
         yield return new WaitForSeconds(2);
         ServeBall();
         roundTimer = 0f;
@@ -153,17 +154,20 @@ public class GameController : MonoBehaviour
         if (changeSide)
             GameRules.startSide = GameRules.SecondSide;
 
-        objects.player1.CenterPlayer();
-        objects.player2.CenterPlayer();
-
+        RecenterPlayers();
         ScoreClear();
         ServeBall();
-        
+
         Time.timeScale = 0f;
 
         StartCoroutine(nameof(UnfreezeGame));
     }
 
+    private void RecenterPlayers()
+    {
+        objects.player1.CenterPlayer();
+        objects.player2.CenterPlayer();
+    }
 
     IEnumerator UnfreezeGame()
     {
