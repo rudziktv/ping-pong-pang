@@ -13,5 +13,7 @@ namespace Assets.Packages.Engine.Game
 
         public PlayerController player1;
         public PlayerController player2;
+
+        public OutController[] outs;
     }
 }
