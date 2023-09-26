@@ -1,5 +1,6 @@
 ﻿using Assets.Packages.Engine.Game;
 using Assets.Packages.Engine.Game.Defaults;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,6 +8,9 @@ namespace Assets.Packages.Engine.UI
 {
     public class SettingsModel
     {
+        public delegate void RestoreArgs();
+        public static event RestoreArgs RestoreDefault;
+
         VisualElement tc;
 
         Slider p1Sensitivity;
@@ -93,8 +97,15 @@ namespace Assets.Packages.Engine.UI
                 PlayerPrefs.Save();
             });
 
+            RestoreDefault += ResetPrefs;
 
-            tc.Q<Button>("reset").clicked += ResetPrefs;
+
+            tc.Q<Button>("reset").clicked += ClearPreferences;
+        }
+
+        private void ClearPreferences()
+        {
+            RestoreDefault?.Invoke();
         }
 
         private void InitializeUI()
@@ -111,9 +122,17 @@ namespace Assets.Packages.Engine.UI
         {
             PlayerPrefs.DeleteAll();
             PlayerPrefs.Save();
+            RestoreDefaultValues();
+        }
 
-            p1Sensitivity.value = 0.05f;
-            p2Sensitivity.value = 0.05f;
+        private void RestoreDefaultValues()
+        {
+            p1Sensitivity.value = DefaultSettings.SENSITIVITY;
+            p2Sensitivity.value = DefaultSettings.SENSITIVITY;
+
+            masterVolume.value = DefaultSettings.MASTER_VOLUME;
+            sfxVolume.value = DefaultSettings.SFX_VOLUME;
+            musicVolume.value = DefaultSettings.MUSIC_VOLUME;
         }
     }
 }

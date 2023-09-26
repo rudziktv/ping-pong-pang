@@ -107,5 +107,7 @@ public class MainMenuModel : MonoBehaviour
         page.Add(gameMenuUI);
 
         UIHelper.ShowRoot(gameMenuUI);
+
+        gameSubpageModel.UpdateValues();
     }
 }
