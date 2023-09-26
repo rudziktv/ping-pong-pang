@@ -28,13 +28,13 @@
                     <ui:EnumField label="Initial serve" type="OutSide, Assembly-CSharp" name="initServe" focusable="false" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1;">
-                    <ui:Slider picking-mode="Ignore" label="Initial velocity" value="1" high-value="10" low-value="1" show-input-field="true" tooltip="Speed of ball" focusable="false" name="initVelSet" />
+                    <ui:Slider picking-mode="Ignore" label="Initial velocity" value="1" high-value="10" low-value="1" show-input-field="true" tooltip="Speed of ball" focusable="true" name="initVelSet" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1;">
                     <ui:Toggle label="Acceleration over time" focusable="false" name="accelerationSet" style="justify-content: flex-start;" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1;">
-                    <ui:Slider picking-mode="Ignore" label="Acceleration rate" value="1" high-value="10" low-value="0" show-input-field="true" tooltip="Acceleration rate" focusable="false" name="accelerationRate" />
+                    <ui:Slider picking-mode="Ignore" label="Acceleration rate" value="1" high-value="10" low-value="0" show-input-field="true" tooltip="Acceleration rate" focusable="true" name="accelerationRate" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:ScrollView>
