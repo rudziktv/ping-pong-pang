@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UIElements;
 
 namespace Assets.Packages.Engine.UI
@@ -109,7 +110,7 @@ namespace Assets.Packages.Engine.UI
                 display.RegisterValueChangedCallback((display) =>
                 {
                     int selectedIndex = int.Parse(display.newValue.Split(' ')[1]) - 1;
-                    Display.displays[selectedIndex].Activate();
+                    //Screen.MoveMainWindowTo(Display.displays[selectedIndex] , Vector2Int.zero);
                 });
                 //Display.onDisplaysUpdated += DisplaysUpdate;
                 
