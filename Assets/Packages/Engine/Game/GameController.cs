@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
 
     public float IntentionalVelocity => Acceleration + GameRules.velocity / rb.mass;
 
+    bool reseting;
+
 
     private void Awake()
     {
@@ -37,9 +39,17 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        OutInitialize();
         GameRestart();
     }
 
+    private void OutInitialize()
+    {
+        foreach (var item in objects.outs)
+        {
+            item.outDetected += Score;
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -49,7 +59,7 @@ public class GameController : MonoBehaviour
 
     private void AccelerationTimer()
     {
-        if (GameRules.accelerationOverTime)
+        if (GameRules.accelerationOverTime && !reseting)
         {
             roundTimer += Time.fixedDeltaTime;
         }
@@ -119,23 +129,37 @@ public class GameController : MonoBehaviour
             WinSequence();
             return;
         }
+        else
+        {
+            StartCoroutine(nameof(ResetBallPosition));
+        }
 
         AudioController.Instance.PlayScore();
     }
 
 
+    IEnumerator ResetBallPosition()
+    {
+        reseting = true;
+        yield return new WaitForSeconds(2);
+        ServeBall();
+        roundTimer = 0f;
+        reseting = false;
+    }
+
+
     public void GameRestart(bool changeSide = false)
     {
+        if (changeSide)
+            GameRules.startSide = GameRules.SecondSide;
+
         objects.player1.CenterPlayer();
         objects.player2.CenterPlayer();
 
-        Time.timeScale = 0f;
-        
         ScoreClear();
         ServeBall();
-
-        if (changeSide)
-            GameRules.startSide = GameRules.SecondSide;
+        
+        Time.timeScale = 0f;
 
         StartCoroutine(nameof(UnfreezeGame));
     }
