@@ -1,5 +1,5 @@
 ﻿using Assets.Packages.Engine.Game;
-using System;
+using Assets.Packages.Engine.Game.Defaults;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -20,17 +20,58 @@ namespace Assets.Packages.Engine.UI
         public GameSubpageModel(TemplateContainer tc)
         {
             this.tc = tc;
+            InitializeUI();
+            LoadPreferences();
+            RegisterCallbacks();
+        }
 
+        private void LoadPreferences()
+        {
+            winScore.value = PlayerPrefs.GetInt(SettingsKeys.WIN_SCORE,
+                            DefaultRules.WIN_SCORE);
+            initialVelocity.value = PlayerPrefs.GetFloat(SettingsKeys.INIT_VELOCITY,
+                DefaultRules.INIT_VELOCITY);
+            acceleration.value = PlayerPrefs.GetInt(SettingsKeys.ACCELERATION_ENABLED,
+                DefaultRules.ACCELERATION_ENABLED ? 1 : 0) == 1;
+            accelerationRate.value = PlayerPrefs.GetFloat(SettingsKeys.ACCELERATION_RATE,
+                DefaultRules.ACCELERATION_RATE);
+        }
+
+        private void RegisterCallbacks()
+        {
+            winScore.RegisterValueChangedCallback((args) =>
+            {
+                winScore.value = args.newValue < 0 ? 0 : args.newValue;
+                PlayerPrefs.SetInt(SettingsKeys.WIN_SCORE, args.newValue);
+                PlayerPrefs.Save();
+            });
+
+            initialVelocity.RegisterValueChangedCallback((args) =>
+            {
+                PlayerPrefs.SetFloat(SettingsKeys.INIT_VELOCITY, args.newValue);
+                PlayerPrefs.Save();
+            });
+
+            acceleration.RegisterValueChangedCallback((args) =>
+            {
+                PlayerPrefs.SetInt(SettingsKeys.ACCELERATION_ENABLED, args.newValue ? 1 : 0);
+                PlayerPrefs.Save();
+            });
+
+            accelerationRate.RegisterValueChangedCallback((args) =>
+            {
+                PlayerPrefs.SetFloat(SettingsKeys.ACCELERATION_RATE, args.newValue);
+                PlayerPrefs.Save();
+            });
+        }
+
+        private void InitializeUI()
+        {
             winScore = tc.Q<IntegerField>("winScoreSet");
             initialServe = tc.Q<EnumField>("initServe");
             initialVelocity = tc.Q<Slider>("initVelSet");
             acceleration = tc.Q<Toggle>("accelerationSet");
             accelerationRate = tc.Q<Slider>("accelerationRate");
-
-            winScore.RegisterValueChangedCallback((args) =>
-            {
-                winScore.value = args.newValue < 0 ? 0 : args.newValue;
-            });
 
             tc.Q<Button>("side-by-side").SetEnabled(false);
 
