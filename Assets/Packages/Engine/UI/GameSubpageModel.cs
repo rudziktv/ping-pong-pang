@@ -73,6 +73,15 @@ namespace Assets.Packages.Engine.UI
             initialVelocity.value = DefaultRules.INIT_VELOCITY;
             acceleration.value = DefaultRules.ACCELERATION_ENABLED;
             accelerationRate.value = DefaultRules.ACCELERATION_RATE;
+
+            initialVelocity.SetValueWithoutNotify(DefaultRules.INIT_VELOCITY);
+            accelerationRate.SetValueWithoutNotify(DefaultRules.ACCELERATION_RATE);
+        }
+
+        public void UpdateValues()
+        {
+            initialVelocity.SetValueWithoutNotify(DefaultRules.INIT_VELOCITY);
+            accelerationRate.SetValueWithoutNotify(DefaultRules.ACCELERATION_RATE);
         }
 
         private void InitializeUI()
