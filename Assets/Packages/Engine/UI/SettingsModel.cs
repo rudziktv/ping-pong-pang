@@ -1,4 +1,5 @@
 ﻿using Assets.Packages.Engine.Game;
+using Assets.Packages.Engine.Game.Defaults;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -20,7 +21,7 @@ namespace Assets.Packages.Engine.UI
         {
             this.tc = tc;
             InitializeUI();
-            SubscirbeEvents();
+            RegisterCallbacks();
             LoadPreferences();
 
             AudioListener.volume = masterVolume.value;
@@ -32,15 +33,20 @@ namespace Assets.Packages.Engine.UI
 
         private void LoadPreferences()
         {
-            p1Sensitivity.value = PlayerPrefs.GetFloat(SettingsKeys.PLAYER1_SENSITIVITY, 0.05f);
-            p2Sensitivity.value = PlayerPrefs.GetFloat(SettingsKeys.PLAYER2_SENSITIVITY, 0.05f);
+            p1Sensitivity.value = PlayerPrefs.GetFloat(SettingsKeys.PLAYER1_SENSITIVITY,
+                DefaultSettings.SENSITIVITY);
+            p2Sensitivity.value = PlayerPrefs.GetFloat(SettingsKeys.PLAYER2_SENSITIVITY,
+                DefaultSettings.SENSITIVITY);
 
-            masterVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MASTER_VOLUME, 0.5f);
-            sfxVolume.value = PlayerPrefs.GetFloat(SettingsKeys.SFX_VOLUME, 1f);
-            musicVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MUSIC_VOLUME, 0.25f);
+            masterVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MASTER_VOLUME,
+                DefaultSettings.MASTER_VOLUME);
+            sfxVolume.value = PlayerPrefs.GetFloat(SettingsKeys.SFX_VOLUME,
+                DefaultSettings.SFX_VOLUME);
+            musicVolume.value = PlayerPrefs.GetFloat(SettingsKeys.MUSIC_VOLUME,
+                DefaultSettings.MUSIC_VOLUME);
         }
 
-        private void SubscirbeEvents()
+        private void RegisterCallbacks()
         {
             p1Sensitivity.RegisterValueChangedCallback((args) =>
             {

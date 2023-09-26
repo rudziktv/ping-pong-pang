@@ -99,3 +99,7 @@ Button:active {
 Button:disabled {
     background-color: rgb(51, 51, 51);
 }
+
+.unity-base-field:focus > Label {
+    color: rgb(179, 179, 179);
+}
