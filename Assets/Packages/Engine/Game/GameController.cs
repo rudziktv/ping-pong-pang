@@ -135,6 +135,10 @@ public class GameController : MonoBehaviour
         }
         else if (scorePlayer1 >= GameRules.winScore || scorePlayer2 >= GameRules.winScore)
         {
+            if (scorePlayer1 >= GameRules.winScore)
+                setPlayer1++;
+            else if (scorePlayer2 >= GameRules.winScore)
+                setPlayer2++;
 
             AudioController.Instance.PlayWin();
             StartCoroutine(nameof(ResetBallPosition));
@@ -192,6 +196,8 @@ public class GameController : MonoBehaviour
     {
         scorePlayer1 = 0;
         scorePlayer2 = 0;
+        setPlayer1 = 0;
+        setPlayer2 = 0;
 
         UpdateScoreUI();
     }
@@ -201,6 +207,9 @@ public class GameController : MonoBehaviour
     {
         GameUI.Instance.PlayerScore(OutSide.Left, scorePlayer1);
         GameUI.Instance.PlayerScore(OutSide.Right, scorePlayer2);
+
+        GameUI.Instance.PlayerSet(OutSide.Left, setPlayer1);
+        GameUI.Instance.PlayerSet(OutSide.Right, setPlayer2);
     }
 
 

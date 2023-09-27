@@ -20,6 +20,8 @@ public class GameUI : MonoBehaviour
 
     Label player1Score;
     Label player2Score;
+    Label player1Set;
+    Label player2Set;
 
     public bool GamePaused => pauseMenuUI.Enabled;
 
@@ -36,8 +38,10 @@ public class GameUI : MonoBehaviour
 
         GameInput.Instance.InputScheme.Player.PauseMenu.performed += PauseMenuButton;
 
-        player1Score = document.rootVisualElement.Q<Label>("player1");
-        player2Score = document.rootVisualElement.Q<Label>("player2");
+        player1Score = document.rootVisualElement.Q<Label>("scorePlayer1");
+        player2Score = document.rootVisualElement.Q<Label>("scorePlayer2");
+        player1Set = document.rootVisualElement.Q<Label>("setPlayer1");
+        player2Set = document.rootVisualElement.Q<Label>("setPlayer2");
     }
 
     private void PauseMenuButton(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -55,6 +59,14 @@ public class GameUI : MonoBehaviour
             player1Score.text = value.ToString();
         else
             player2Score.text = value.ToString();
+    }
+
+    public void PlayerSet(OutSide side, int value)
+    {
+        if (side == OutSide.Left)
+            player1Set.text = value.ToString();
+        else
+            player2Set.text = value.ToString();
     }
 
 
