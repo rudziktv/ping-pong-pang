@@ -14,6 +14,9 @@ public class GameController : MonoBehaviour
     int scorePlayer1;
     int scorePlayer2;
 
+    int setPlayer1;
+    int setPlayer2;
+
     float roundTimer;
 
     float Acceleration => GameRules.accelerationOverTime ?
@@ -21,6 +24,7 @@ public class GameController : MonoBehaviour
         : 0f;
 
     public int Round => 1 + scorePlayer1 + scorePlayer2;
+    public int Set => 1 + scorePlayer1 + setPlayer2;
 
     public GameObject Ball => objects.ball;
     public Rigidbody2D BallRb => rb;
@@ -124,9 +128,16 @@ public class GameController : MonoBehaviour
 
         roundTimer = 0f;
 
-        if (scorePlayer1 >= GameRules.winScore || scorePlayer2 >= GameRules.winScore)
+        if (setPlayer1 >= GameRules.sets || setPlayer2 >= GameRules.sets)
         {
             WinSequence();
+            return;
+        }
+        else if (scorePlayer1 >= GameRules.winScore || scorePlayer2 >= GameRules.winScore)
+        {
+
+            AudioController.Instance.PlayWin();
+            StartCoroutine(nameof(ResetBallPosition));
             return;
         }
         else
@@ -141,8 +152,8 @@ public class GameController : MonoBehaviour
     IEnumerator ResetBallPosition()
     {
         reseting = true;
-        RecenterPlayers();
         yield return new WaitForSeconds(2);
+        RecenterPlayers();
         ServeBall();
         roundTimer = 0f;
         reseting = false;

@@ -11,6 +11,7 @@ namespace Assets.Packages.Engine.UI
 
 
         IntegerField winScore;
+        IntegerField setsAmount;
         EnumField initialServe;
         Slider initialVelocity;
         Toggle acceleration;
@@ -28,7 +29,9 @@ namespace Assets.Packages.Engine.UI
         private void LoadPreferences()
         {
             winScore.value = PlayerPrefs.GetInt(SettingsKeys.WIN_SCORE,
-                            DefaultRules.WIN_SCORE);
+                DefaultRules.WIN_SCORE);
+            setsAmount.value = PlayerPrefs.GetInt(SettingsKeys.SETS,
+                DefaultRules.SETS);
             initialVelocity.value = PlayerPrefs.GetFloat(SettingsKeys.INIT_VELOCITY,
                 DefaultRules.INIT_VELOCITY);
             acceleration.value = PlayerPrefs.GetInt(SettingsKeys.ACCELERATION_ENABLED,
@@ -41,8 +44,15 @@ namespace Assets.Packages.Engine.UI
         {
             winScore.RegisterValueChangedCallback((args) =>
             {
-                winScore.value = args.newValue < 0 ? 0 : args.newValue;
+                winScore.value = args.newValue < 1 ? 1 : args.newValue;
                 PlayerPrefs.SetInt(SettingsKeys.WIN_SCORE, args.newValue);
+                PlayerPrefs.Save();
+            });
+
+            setsAmount.RegisterValueChangedCallback((args) =>
+            {
+                setsAmount.value = args.newValue < 1 ? 1 : args.newValue;
+                PlayerPrefs.SetInt(SettingsKeys.SETS, args.newValue);
                 PlayerPrefs.Save();
             });
 
@@ -70,6 +80,7 @@ namespace Assets.Packages.Engine.UI
         private void RestoreDefaultValues()
         {
             winScore.value = DefaultRules.WIN_SCORE;
+            setsAmount.value = DefaultRules.SETS;
             initialVelocity.value = DefaultRules.INIT_VELOCITY;
             acceleration.value = DefaultRules.ACCELERATION_ENABLED;
             accelerationRate.value = DefaultRules.ACCELERATION_RATE;
@@ -87,6 +98,7 @@ namespace Assets.Packages.Engine.UI
         private void InitializeUI()
         {
             winScore = tc.Q<IntegerField>("winScoreSet");
+            setsAmount = tc.Q<IntegerField>("setsAmount");
             initialServe = tc.Q<EnumField>("initServe");
             initialVelocity = tc.Q<Slider>("initVelSet");
             acceleration = tc.Q<Toggle>("accelerationSet");
@@ -109,6 +121,7 @@ namespace Assets.Packages.Engine.UI
         public void Setup()
         {
             GameRules.winScore = winScore.value;
+            GameRules.sets = setsAmount.value;
             GameRules.velocity = initialVelocity.value;
             GameRules.startSide = (OutSide)initialServe.value;
             GameRules.accelerationOverTime = acceleration.value;

@@ -9,6 +9,8 @@ public class GameRules
 
     public static int winScore = 3;
 
+    public static int sets = 3;
+
     public static float velocity = 2f;
 
     public static bool accelerationOverTime = false;

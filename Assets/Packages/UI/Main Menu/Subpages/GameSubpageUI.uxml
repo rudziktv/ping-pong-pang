@@ -25,6 +25,9 @@
                     <ui:IntegerField label="Win Score" value="12" tooltip="If set to 0, game is endless." focusable="true" name="winScoreSet" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1;">
+                    <ui:IntegerField label="Sets" value="3" tooltip="If set to 0, game is endless." focusable="true" name="setsAmount" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1;">
                     <ui:EnumField label="Initial serve" type="OutSide, Assembly-CSharp" name="initServe" focusable="false" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1;">
