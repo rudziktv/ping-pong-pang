@@ -1,6 +1,6 @@
 #button-area {
     justify-content: center;
-    min-width: 300px;
+    min-width: 240px;
     flex-grow: 0;
     width: 30%;
     padding-left: 25px;
@@ -19,4 +19,16 @@
     padding-right: 25px;
     padding-top: 25px;
     padding-bottom: 25px;
+}
+
+#button-area > Button > Label {
+    font-size: 32px;
+    -unity-font-style: normal;
+}
+
+#button-area > Button > .icon {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }

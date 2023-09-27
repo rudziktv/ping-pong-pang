@@ -3,21 +3,25 @@
     <Style src="project://database/Assets/Packages/UI/Styles/MainMenuStyleUI.uss?fileID=7433441132597879392&amp;guid=18274ed713d09c84884401212221124a&amp;type=3#MainMenuStyleUI" />
     <ui:VisualElement name="root" style="flex-grow: 1; flex-direction: row; font-size: 32px; -unity-font: url(&apos;project://database/Assets/Packages/Fonts/Lexend/static/Lexend-Regular.ttf?fileID=12800000&amp;guid=6fef618d93236ab488e19ffe173fda09&amp;type=3#Lexend-Regular&apos;); -unity-font-definition: initial; background-color: rgb(27, 36, 48); justify-content: center; align-items: center;">
         <ui:VisualElement name="button-area" style="flex-grow: 0;">
-            <ui:Button text="Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="game-menu" style="background-color: rgb(122, 157, 84);">
-                <ui:VisualElement class="icon" style="flex-grow: 1; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/right.png?fileID=2800000&amp;guid=a7615f000ad116b4b9db5ebc6b0b0083&amp;type=3#right&apos;);" />
-                <ui:VisualElement class="tint" style="flex-grow: 1;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="game-menu" class="icon_button" style="background-color: rgb(122, 157, 84); align-items: center;">
+                <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/right.png?fileID=2800000&amp;guid=afff2adcb6a4bdf46918f9b93b572f50&amp;type=3#right&apos;);" />
+                <ui:Label tabindex="-1" text="Game" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:VisualElement class="tint" style="flex-grow: 0;" />
             </ui:Button>
-            <ui:Button text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" name="settings-menu">
-                <ui:VisualElement class="icon" style="flex-grow: 1; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/gear.png?fileID=2800000&amp;guid=f412124db31b876449ed5684bc998b89&amp;type=3#gear&apos;);" />
-                <ui:VisualElement class="tint" style="flex-grow: 1;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="settings-menu" class="icon_button" style="align-items: center;">
+                <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/gear.png?fileID=2800000&amp;guid=f412124db31b876449ed5684bc998b89&amp;type=3#gear&apos;);" />
+                <ui:Label tabindex="-1" text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:VisualElement class="tint" style="flex-grow: 0;" />
             </ui:Button>
-            <ui:Button text="Credits" parse-escape-sequences="true" display-tooltip-when-elided="true" name="credits">
-                <ui:VisualElement class="icon" style="flex-grow: 1; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/information.png?fileID=2800000&amp;guid=bd3bebc24e837e3479e39b531426f304&amp;type=3#information&apos;);" />
-                <ui:VisualElement class="tint" style="flex-grow: 1;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="credits" class="icon_button" style="align-items: center;">
+                <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons/PNG/White/2x/information.png?fileID=2800000&amp;guid=bd3bebc24e837e3479e39b531426f304&amp;type=3#information&apos;);" />
+                <ui:Label tabindex="-1" text="Credits" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:VisualElement class="tint" style="flex-grow: 0;" />
             </ui:Button>
-            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit-button" style="background-color: rgb(154, 59, 59);">
-                <ui:VisualElement class="icon" style="flex-grow: 1; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/exit.png?fileID=2800000&amp;guid=9d5f87704ce48f44fb62ee8572c560fc&amp;type=3#exit&apos;);" />
-                <ui:VisualElement class="tint" style="flex-grow: 1;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit-button" class="icon_button" style="background-color: rgb(154, 59, 59); align-items: center;">
+                <ui:VisualElement class="icon" style="flex-grow: 0; width: 48px; height: 48px; position: relative; background-image: url(&apos;project://database/Assets/Packages/Icons/kenney_game-icons-expansion/Game%20icons%20(base)/PNG/White/2x/exit.png?fileID=2800000&amp;guid=9d5f87704ce48f44fb62ee8572c560fc&amp;type=3#exit&apos;);" />
+                <ui:Label tabindex="-1" text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:VisualElement class="tint" style="flex-grow: 0;" />
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement name="view-area" style="flex-grow: 1; max-width: 900px; height: 100%; max-height: 900px;" />
