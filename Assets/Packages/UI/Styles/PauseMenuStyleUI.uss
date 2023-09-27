@@ -17,3 +17,9 @@
     transition-delay: 0.7s;
     background-color: rgba(0, 0, 0, 0);
 }
+
+#view-container .unity-base-field__label {
+    width: 40%;
+    min-width: 165px;
+    max-width: 250px;
+}
