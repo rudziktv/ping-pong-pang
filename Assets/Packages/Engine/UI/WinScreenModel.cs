@@ -15,6 +15,8 @@ namespace Assets.Packages.Engine.UI
 
         Label scorePlayer1;
         Label scorePlayer2;
+        Label setPlayer1;
+        Label setPlayer2;
 
         Label statsTime;
         Label statsDistance;
@@ -33,6 +35,8 @@ namespace Assets.Packages.Engine.UI
             window = root.Q<VisualElement>("window");
             scorePlayer1 = root.Q<Label>("scorePlayer1");
             scorePlayer2 = root.Q<Label>("scorePlayer2");
+            setPlayer1 = root.Q<Label>("setPlayer1");
+            setPlayer2 = root.Q<Label>("setPlayer2");
             statsTime = root.Q<Label>("time");
             statsDistance = root.Q<Label>("distance");
             statsContacts = root.Q<Label>("contacts");
@@ -66,6 +70,9 @@ namespace Assets.Packages.Engine.UI
 
             scorePlayer1.text = score.p1.ToString();
             scorePlayer2.text = score.p2.ToString();
+
+            setPlayer1.text = score.sp1.ToString();
+            setPlayer2.text = score.sp2.ToString();
 
             statsTime.text = BuildTimeString(stats.time);
             statsDistance.text = $"{Mathf.Round(stats.distance)} m";

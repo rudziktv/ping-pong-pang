@@ -1,6 +1,7 @@
 using Assets.Packages.Engine.Game;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameController : MonoBehaviour
 {
@@ -128,6 +129,11 @@ public class GameController : MonoBehaviour
 
         roundTimer = 0f;
 
+        if (scorePlayer1 >= GameRules.winScore)
+            setPlayer1++;
+        else if (scorePlayer2 >= GameRules.winScore)
+            setPlayer2++;
+
         if (setPlayer1 >= GameRules.sets || setPlayer2 >= GameRules.sets)
         {
             WinSequence();
@@ -135,10 +141,11 @@ public class GameController : MonoBehaviour
         }
         else if (scorePlayer1 >= GameRules.winScore || scorePlayer2 >= GameRules.winScore)
         {
-            if (scorePlayer1 >= GameRules.winScore)
-                setPlayer1++;
-            else if (scorePlayer2 >= GameRules.winScore)
-                setPlayer2++;
+            scorePlayer1 = 0;
+            scorePlayer2 = 0;
+
+            UpdateScoreUI();
+            GameRules.startSide = GameRules.SecondSide;
 
             AudioController.Instance.PlayWin();
             StartCoroutine(nameof(ResetBallPosition));
@@ -223,7 +230,7 @@ public class GameController : MonoBehaviour
     }
 
 
-    public Score GetScore => new(scorePlayer1, scorePlayer2);
+    public Score GetScore => new(scorePlayer1, scorePlayer2, setPlayer1, setPlayer2);
 }
 
 
@@ -231,10 +238,14 @@ public class Score
 {
     public int p1;
     public int p2;
+    public int sp1;
+    public int sp2;
 
-    public Score(int p1, int p2)
+    public Score(int p1, int p2, int sp1, int sp2)
     {
         this.p1 = p1;
         this.p2 = p2;
+        this.sp1 = sp1;
+        this.sp2 = sp2;
     }
 }

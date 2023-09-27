@@ -7,11 +7,19 @@
                 <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: space-around; flex-grow: 0; width: 100%;">
                     <ui:VisualElement class="score-area" style="flex-grow: 0;">
                         <ui:Label tabindex="-1" text="BLUE" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-                        <ui:Label tabindex="-1" text="999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="scorePlayer1" class="score-text" />
+                        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center;">
+                            <ui:Label tabindex="-1" text="999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="scorePlayer1" class="score-text" />
+                            <ui:Label tabindex="-1" text="- sets" parse-escape-sequences="true" display-tooltip-when-elided="true" class="sets" />
+                            <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="setPlayer1" class="sets" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="score-area" style="flex-grow: 0;">
                         <ui:Label tabindex="-1" text="RED" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-                        <ui:Label tabindex="-1" text="999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="scorePlayer2" class="score-text" />
+                        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center;">
+                            <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="setPlayer2" class="sets" />
+                            <ui:Label tabindex="-1" text="sets -" parse-escape-sequences="true" display-tooltip-when-elided="true" class="sets" />
+                            <ui:Label tabindex="-1" text="999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="scorePlayer2" class="score-text" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="stats" style="flex-grow: 1; width: 100%; justify-content: flex-start;">

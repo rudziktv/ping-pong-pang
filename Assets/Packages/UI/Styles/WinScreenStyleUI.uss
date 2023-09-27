@@ -39,3 +39,8 @@
 .hide-window {
     scale: 0 0;
 }
+
+.sets {
+    font-size: 32px;
+    -unity-font-style: normal;
+}
