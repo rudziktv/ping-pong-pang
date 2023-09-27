@@ -91,8 +91,8 @@ namespace Assets.Packages.Engine.UI
 
         public void UpdateValues()
         {
-            initialVelocity.SetValueWithoutNotify(DefaultRules.INIT_VELOCITY);
-            accelerationRate.SetValueWithoutNotify(DefaultRules.ACCELERATION_RATE);
+            initialVelocity.SetValueWithoutNotify(initialVelocity.value);
+            accelerationRate.SetValueWithoutNotify(accelerationRate.value);
         }
 
         private void InitializeUI()
