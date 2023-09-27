@@ -15,7 +15,7 @@
     margin-right: 0;
     margin-top: 7px;
     margin-bottom: 7px;
-    width: 300px;
+    width: 250px;
 }
 
 .unity-slider__label {
