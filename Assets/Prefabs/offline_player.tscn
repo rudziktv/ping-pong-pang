@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://clb2mafbonw7h"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://0jaylcfkme6v" path="res://Assets/Materials/bouncy_material.tres" id="1_gf8ko"]
+[ext_resource type="Script" uid="uid://djn7t3kjj7136" path="res://Scripts/Entities/OfflinePlayer.cs" id="2_gf8ko"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgki7"]
+radius = 7.0
+height = 80.0
+
+[node name="OfflinePlayer" type="RigidBody2D"]
+physics_interpolation_mode = 2
+collision_layer = 2
+physics_material_override = ExtResource("1_gf8ko")
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+continuous_cd = 2
+script = ExtResource("2_gf8ko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_tgki7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

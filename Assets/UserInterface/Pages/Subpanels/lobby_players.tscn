@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://m2xynfyk401f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j81p6"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.24967545, 0.11810682, 0.042768687, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[node name="LobbyPlayers" type="PanelContainer"]
+custom_minimum_size = Vector2(256, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_j81p6")
+
+[node name="ContentContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="ContentContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Players"
+
+[node name="BoxContainer" type="BoxContainer" parent="ContentContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical = true
+
+[node name="PlayersList" type="VBoxContainer" parent="ContentContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="HostListItem" type="HBoxContainer" parent="ContentContainer/BoxContainer/PlayersList"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ColorPicker" type="ColorPickerButton" parent="ContentContainer/BoxContainer/PlayersList/HostListItem"]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+color = Color(0.20392157, 0.4117647, 0.7764706, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="NicknameLabel" type="Label" parent="ContentContainer/BoxContainer/PlayersList/HostListItem"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Owner [Host]"
+
+[node name="GuestListItem" type="HBoxContainer" parent="ContentContainer/BoxContainer/PlayersList"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ColorPicker" type="ColorPickerButton" parent="ContentContainer/BoxContainer/PlayersList/GuestListItem"]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+color = Color(0.72455007, 0.15878713, 0.23475951, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="NicknameLabel" type="Label" parent="ContentContainer/BoxContainer/PlayersList/GuestListItem"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="Spacer" type="VBoxContainer" parent="ContentContainer/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="ContentContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="BottomContainer" type="VBoxContainer" parent="ContentContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ContentContainer/BoxContainer/BottomContainer"]
+layout_mode = 2
+text = "Host Starting Side"
+
+[node name="HostStartingSide" type="OptionButton" parent="ContentContainer/BoxContainer/BottomContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+selected = 0
+item_count = 3
+popup/item_0/text = "Random"
+popup/item_0/id = 0
+popup/item_1/text = "Left"
+popup/item_1/id = 1
+popup/item_2/text = "Right"
+popup/item_2/id = 2

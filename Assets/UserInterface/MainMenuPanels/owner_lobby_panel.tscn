@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn0uevfndveos"]
+
+[ext_resource type="PackedScene" uid="uid://dkd2n0es14r64" path="res://Assets/UserInterface/MainMenuPanels/shared_lobby_settings.tscn" id="1_v8wsk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arsq5"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.20574746, 0.34183535, 0.21750686, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[node name="OwnerLobbyPanel" type="PanelContainer"]
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_arsq5")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+vertical = true
+
+[node name="OwnerLobbyLabel" type="Label" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Your Lobby"
+
+[node name="PublicSettingsBox" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PublicSettingsLabel" type="Label" parent="BoxContainer/PublicSettingsBox"]
+layout_mode = 2
+text = "Public Settings"
+
+[node name="Spacer" type="HBoxContainer" parent="BoxContainer/PublicSettingsBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PublicSettingsToggle" type="CheckButton" parent="BoxContainer/PublicSettingsBox"]
+layout_mode = 2
+
+[node name="SharedLobbySettings" parent="BoxContainer" instance=ExtResource("1_v8wsk")]
+layout_mode = 2
+
+[node name="ActionBox" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseLobbyButton" type="Button" parent="BoxContainer/ActionBox"]
+layout_mode = 2
+text = "Close"
+
+[node name="SpacerLeft" type="HBoxContainer" parent="BoxContainer/ActionBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CopyPortButton" type="Button" parent="BoxContainer/ActionBox"]
+layout_mode = 2
+text = "Copy Port"
+
+[node name="SpacerRight" type="HBoxContainer" parent="BoxContainer/ActionBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="StartLobbyButton" type="Button" parent="BoxContainer/ActionBox"]
+layout_mode = 2
+disabled = true
+text = "Start"

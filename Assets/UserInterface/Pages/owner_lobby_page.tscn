@@ -1,0 +1,150 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxha2wnxw47g4"]
+
+[ext_resource type="PackedScene" uid="uid://cn0uevfndveos" path="res://Assets/UserInterface/MainMenuPanels/owner_lobby_panel.tscn" id="1_5s8bj"]
+[ext_resource type="PackedScene" uid="uid://m2xynfyk401f" path="res://Assets/UserInterface/Pages/Subpanels/lobby_players.tscn" id="1_evc0s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arsq5"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.20574746, 0.34183535, 0.21750686, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[node name="OwnerLobbyPage" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContentBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="LobbyPanel" parent="ContentBox" instance=ExtResource("1_5s8bj")]
+layout_mode = 2
+
+[node name="OldLobbyPanel" type="PanelContainer" parent="ContentBox"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_arsq5")
+
+[node name="BoxContainer" type="BoxContainer" parent="ContentBox/OldLobbyPanel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+vertical = true
+
+[node name="OwnerLobbyLabel" type="Label" parent="ContentBox/OldLobbyPanel/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Your Lobby"
+
+[node name="PublicSettingsBox" type="HBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PublicSettingsLabel" type="Label" parent="ContentBox/OldLobbyPanel/BoxContainer/PublicSettingsBox"]
+layout_mode = 2
+text = "Public Settings"
+
+[node name="Spacer" type="HBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer/PublicSettingsBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PublicSettingsToggle" type="CheckButton" parent="ContentBox/OldLobbyPanel/BoxContainer/PublicSettingsBox"]
+layout_mode = 2
+
+[node name="SetsAmountBox" type="VBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer"]
+layout_mode = 2
+
+[node name="SetsAmountLabel" type="Label" parent="ContentBox/OldLobbyPanel/BoxContainer/SetsAmountBox"]
+layout_mode = 2
+text = "Amount of Sets"
+
+[node name="SetsAmountSpin" type="SpinBox" parent="ContentBox/OldLobbyPanel/BoxContainer/SetsAmountBox"]
+layout_mode = 2
+min_value = 1.0
+step = 2.0
+value = 3.0
+
+[node name="TurnsBox" type="VBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer"]
+layout_mode = 2
+
+[node name="TurnsLabel" type="Label" parent="ContentBox/OldLobbyPanel/BoxContainer/TurnsBox"]
+layout_mode = 2
+text = "Turns per Set"
+
+[node name="TurnsSpin" type="SpinBox" parent="ContentBox/OldLobbyPanel/BoxContainer/TurnsBox"]
+layout_mode = 2
+min_value = 1.0
+value = 12.0
+
+[node name="InitialVelocityBox" type="VBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer"]
+layout_mode = 2
+
+[node name="InitialVelocityLabel" type="Label" parent="ContentBox/OldLobbyPanel/BoxContainer/InitialVelocityBox"]
+layout_mode = 2
+text = "Initial Velocity"
+
+[node name="InitialVelocitySlider" type="HSlider" parent="ContentBox/OldLobbyPanel/BoxContainer/InitialVelocityBox"]
+layout_mode = 2
+scrollable = false
+tick_count = 10
+ticks_on_borders = true
+
+[node name="AccelerationRateBox" type="VBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer"]
+layout_mode = 2
+
+[node name="AccelerationRateLabel" type="Label" parent="ContentBox/OldLobbyPanel/BoxContainer/AccelerationRateBox"]
+layout_mode = 2
+text = "Acceleration Rate"
+
+[node name="AccelerationRateSlider" type="HSlider" parent="ContentBox/OldLobbyPanel/BoxContainer/AccelerationRateBox"]
+layout_mode = 2
+scrollable = false
+tick_count = 10
+ticks_on_borders = true
+
+[node name="ActionBox" type="HBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseLobbyButton" type="Button" parent="ContentBox/OldLobbyPanel/BoxContainer/ActionBox"]
+layout_mode = 2
+disabled = true
+text = "Close"
+
+[node name="SpacerLeft" type="HBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer/ActionBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CopyAddressButton" type="Button" parent="ContentBox/OldLobbyPanel/BoxContainer/ActionBox"]
+layout_mode = 2
+disabled = true
+text = "Copy Address"
+
+[node name="SpacerRight" type="HBoxContainer" parent="ContentBox/OldLobbyPanel/BoxContainer/ActionBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="StartLobbyButton" type="Button" parent="ContentBox/OldLobbyPanel/BoxContainer/ActionBox"]
+layout_mode = 2
+disabled = true
+text = "Start"
+
+[node name="LobbyPlayers" parent="ContentBox" instance=ExtResource("1_evc0s")]
+layout_mode = 2

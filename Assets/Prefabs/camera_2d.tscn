@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddqutoirubm11"]
+
+[ext_resource type="Script" uid="uid://bssfgr1khqxlf" path="res://Scripts/Entities/CameraController.cs" id="1_stmx1"]
+
+[node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_stmx1")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]

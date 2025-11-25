@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dkd2n0es14r64"]
+
+[node name="SharedLobbySettings" type="VBoxContainer"]
+theme_override_constants/separation = 12
+
+[node name="SetsAmountBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SetsAmountLabel" type="Label" parent="SetsAmountBox"]
+layout_mode = 2
+text = "Amount of Sets"
+
+[node name="SetsAmountSpin" type="SpinBox" parent="SetsAmountBox"]
+layout_mode = 2
+min_value = 1.0
+step = 2.0
+value = 3.0
+editable = false
+
+[node name="TurnsBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TurnsLabel" type="Label" parent="TurnsBox"]
+layout_mode = 2
+text = "Turns per Set"
+
+[node name="TurnsSpin" type="SpinBox" parent="TurnsBox"]
+layout_mode = 2
+min_value = 1.0
+value = 12.0
+editable = false
+
+[node name="InitialVelocityBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="InitialVelocityLabel" type="Label" parent="InitialVelocityBox"]
+layout_mode = 2
+text = "Initial Velocity"
+
+[node name="InitialVelocitySlider" type="HSlider" parent="InitialVelocityBox"]
+layout_mode = 2
+min_value = 140.0
+max_value = 500.0
+value = 250.0
+editable = false
+scrollable = false
+tick_count = 10
+ticks_on_borders = true
+
+[node name="AccelerationRateBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AccelerationRateLabel" type="Label" parent="AccelerationRateBox"]
+layout_mode = 2
+text = "Acceleration Rate"
+
+[node name="AccelerationRateSlider" type="HSlider" parent="AccelerationRateBox"]
+layout_mode = 2
+max_value = 20.0
+value = 2.0
+editable = false
+scrollable = false
+tick_count = 10
+ticks_on_borders = true

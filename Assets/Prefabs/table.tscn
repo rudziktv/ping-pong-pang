@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://b81ylhegd0sso"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://0jaylcfkme6v" path="res://Assets/Materials/bouncy_material.tres" id="1_ie6im"]
+[ext_resource type="Script" uid="uid://di4v5bi6riyh1" path="res://Scripts/OutZone.cs" id="2_r67sm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqyrl"]
+size = Vector2(800, 40)
+
+[sub_resource type="Gradient" id="Gradient_oqyrl"]
+colors = PackedColorArray(0.82606, 0.82606006, 0.82606, 1, 0.827451, 0.827451, 0.827451, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x87qo"]
+gradient = SubResource("Gradient_oqyrl")
+width = 800
+height = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fiftr"]
+size = Vector2(200, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmhe"]
+size = Vector2(100, 390)
+
+[node name="Table" type="Node2D"]
+
+[node name="Top Wall" type="StaticBody2D" parent="."]
+position = Vector2(0, -200)
+collision_layer = 4
+physics_material_override = ExtResource("1_ie6im")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_oqyrl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Top Wall"]
+texture = SubResource("GradientTexture2D_x87qo")
+
+[node name="Bottom Wall" type="StaticBody2D" parent="."]
+position = Vector2(0, 200)
+collision_layer = 4
+physics_material_override = ExtResource("1_ie6im")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_oqyrl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bottom Wall"]
+texture = SubResource("GradientTexture2D_x87qo")
+
+[node name="Left Out Zone" type="Area2D" parent="."]
+position = Vector2(-400, 0)
+collision_layer = 8
+monitorable = false
+script = ExtResource("2_r67sm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Out Zone"]
+position = Vector2(-100, 0)
+shape = SubResource("RectangleShape2D_fiftr")
+
+[node name="Right Out Zone" type="Area2D" parent="."]
+position = Vector2(400, 0)
+collision_layer = 8
+monitorable = false
+script = ExtResource("2_r67sm")
+OutZoneSide = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Out Zone"]
+position = Vector2(100, 0)
+shape = SubResource("RectangleShape2D_fiftr")
+
+[node name="Turbulence Zone" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turbulence Zone"]
+shape = SubResource("RectangleShape2D_2fmhe")

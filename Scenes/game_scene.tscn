@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxa50rof38hnw"]
+
+[ext_resource type="Script" uid="uid://brlmewhjfhn2r" path="res://Scripts/Networking/Spawn/NetSpawner.cs" id="1_1ixah"]
+[ext_resource type="PackedScene" uid="uid://ddqutoirubm11" path="res://Assets/Prefabs/camera_2d.tscn" id="1_6h5vk"]
+[ext_resource type="Script" uid="uid://jlr2ys2888ob" path="res://Scripts/Networking/NetSpawnerPrimitive.cs" id="1_fiftr"]
+[ext_resource type="Script" uid="uid://c5l3j1eyw55me" path="res://Scripts/Networking/Spawn/NetBallSpawner.cs" id="2_2fmhe"]
+[ext_resource type="Script" uid="uid://c8mqkmdtyvana" path="res://Scripts/Networking/Spawn/NetPlayerSpawner.cs" id="3_7iton"]
+[ext_resource type="PackedScene" uid="uid://dl7lr8pq6qif6" path="res://Assets/UserInterface/master_gui.tscn" id="3_fiftr"]
+[ext_resource type="PackedScene" uid="uid://b81ylhegd0sso" path="res://Assets/Prefabs/table.tscn" id="4_rgj8m"]
+[ext_resource type="AudioStream" uid="uid://cmnyjyghgw07x" path="res://Assets/Sounds/UserInterface/confirmation_001.ogg" id="8_7iton"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_7iton")
+volume_db = -21.767
+
+[node name="NetSpawner" type="Node" parent="."]
+script = ExtResource("1_1ixah")
+
+[node name="NetBallSpawner" type="MultiplayerSpawner" parent="NetSpawner"]
+spawn_path = NodePath("../../SpawnPoint")
+script = ExtResource("2_2fmhe")
+
+[node name="NetPlayerSpawner" type="MultiplayerSpawner" parent="NetSpawner"]
+spawn_path = NodePath("../../SpawnPoint")
+script = ExtResource("3_7iton")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../SpawnPoint")
+script = ExtResource("1_fiftr")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Camera2D" parent="." instance=ExtResource("1_6h5vk")]
+
+[node name="Table" parent="." instance=ExtResource("4_rgj8m")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MasterGUI" parent="CanvasLayer" instance=ExtResource("3_fiftr")]

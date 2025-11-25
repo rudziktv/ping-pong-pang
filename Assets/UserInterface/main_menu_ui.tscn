@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://ffh3v64e46g7"]
+
+[ext_resource type="PackedScene" uid="uid://cl6ej7hf6simm" path="res://Assets/UserInterface/MainMenuPanels/create_lobby_panel.tscn" id="1_4xoxj"]
+[ext_resource type="PackedScene" uid="uid://ci71rhw2d8uo1" path="res://Assets/UserInterface/MainMenuPanels/join_lobby_panel.tscn" id="2_n6mry"]
+[ext_resource type="PackedScene" uid="uid://nglp50yxt1ct" path="res://Assets/UserInterface/Pages/Subpanels/options_panel.tscn" id="3_ajt5t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4iplo"]
+bg_color = Color(0.40392157, 0.627451, 0.78431374, 1)
+
+[node name="MainMenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4iplo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -68.0
+offset_right = 241.0
+offset_bottom = 68.0
+grow_vertical = 2
+
+[node name="ButtonBox" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="HostLobbyMenuButton" type="Button" parent="Panel/HBoxContainer/ButtonBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Host Lobby"
+alignment = 0
+
+[node name="JoinLobbyMenuButton" type="Button" parent="Panel/HBoxContainer/ButtonBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Join Lobby"
+alignment = 0
+
+[node name="OptionsMenuButton" type="Button" parent="Panel/HBoxContainer/ButtonBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+alignment = 0
+
+[node name="ExitMenuButton" type="Button" parent="Panel/HBoxContainer/ButtonBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit"
+alignment = 0
+
+[node name="MenuTabContainer" type="TabContainer" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+clip_tabs = false
+tabs_visible = false
+deselect_enabled = true
+
+[node name="CreateLobbyPanel" parent="Panel/HBoxContainer/MenuTabContainer" instance=ExtResource("1_4xoxj")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="JoinLobbyPanel" parent="Panel/HBoxContainer/MenuTabContainer" instance=ExtResource("2_n6mry")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="OptionsPanel" parent="Panel/HBoxContainer/MenuTabContainer" instance=ExtResource("3_ajt5t")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2

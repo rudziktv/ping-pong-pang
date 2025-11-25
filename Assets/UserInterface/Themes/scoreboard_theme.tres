@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bgntwy1y3c4me"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5wt8"]
+bg_color = Color(0.31044605, 0.5918391, 0.83862364, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qq4fm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5wt8"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6btel"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qq4fm"]
+content_margin_bottom = 2.0
+
+[resource]
+ActivePossessionPointer/base_type = &"PossessionPointer"
+ActivePossessionPointer/styles/panel = SubResource("StyleBoxFlat_j5wt8")
+GuestColor/base_type = &"Panel"
+GuestColor/colors/guest_color = Color(0, 0, 0, 1)
+HostColor/base_type = &"Panel"
+HostColor/colors/host_color = Color(0, 0, 0, 1)
+HostColor/styles/panel = SubResource("StyleBoxFlat_qq4fm")
+Label/styles/normal = SubResource("StyleBoxEmpty_j5wt8")
+PossessionPointer/base_type = &"PanelContainer"
+PossessionPointer/styles/panel = SubResource("StyleBoxFlat_6btel")
+SetLabel/base_type = &"Label"
+SetLabel/colors/font_color = Color(0.11858138, 0.11858138, 0.11858138, 1)
+SetLabel/styles/normal = SubResource("StyleBoxEmpty_qq4fm")

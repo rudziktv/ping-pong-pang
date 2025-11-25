@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://c01gx8ljfh68c"]
+
+[ext_resource type="Script" uid="uid://bufk55dd7xwg5" path="res://Scripts/UserInterfaceTest.cs" id="1_b61eq"]
+
+[node name="TestSimpleUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="UserInterfaceTest" type="Node" parent="."]
+script = ExtResource("1_b61eq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 58.0
+offset_bottom = 31.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ServerButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Server"
+
+[node name="ClientButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Client"
+
+[node name="NicknameEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Player"
+placeholder_text = "Nickname"
+
+[node name="StatusLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 28
+text = "Test..."
+horizontal_alignment = 2

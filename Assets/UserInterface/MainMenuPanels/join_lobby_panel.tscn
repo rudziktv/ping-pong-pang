@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci71rhw2d8uo1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aji71"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.72095656, 0.26841545, 0.22841015, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[node name="JoinLobbyPanel" type="PanelContainer"]
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_aji71")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+vertical = true
+
+[node name="Label" type="Label" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Join Lobby"
+
+[node name="NicknameBox" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="NicknameLabel" type="Label" parent="BoxContainer/NicknameBox"]
+layout_mode = 2
+text = "Nickname"
+
+[node name="NicknameEdit" type="LineEdit" parent="BoxContainer/NicknameBox"]
+layout_mode = 2
+text = "Player"
+
+[node name="AddressBox" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="AddressLabel" type="Label" parent="BoxContainer/AddressBox"]
+layout_mode = 2
+text = "Address"
+
+[node name="AddressEdit" type="LineEdit" parent="BoxContainer/AddressBox"]
+layout_mode = 2
+text = "localhost"
+virtual_keyboard_type = 2
+
+[node name="PortBox" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="PortLabel" type="Label" parent="BoxContainer/PortBox"]
+layout_mode = 2
+text = "Port"
+
+[node name="PortEdit" type="LineEdit" parent="BoxContainer/PortBox"]
+layout_mode = 2
+text = "9999"
+max_length = 5
+virtual_keyboard_type = 2
+
+[node name="ActionsBox" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="JoinLobbyButton" type="Button" parent="BoxContainer/ActionsBox"]
+layout_mode = 2
+text = "Join"

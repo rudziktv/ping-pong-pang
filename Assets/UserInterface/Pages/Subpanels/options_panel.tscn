@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://nglp50yxt1ct"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aji71"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.72095656, 0.26841545, 0.22841015, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[node name="OptionsPanel" type="PanelContainer"]
+offset_right = 224.0
+offset_bottom = 239.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aji71")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+vertical = true
+
+[node name="Label" type="Label" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="BackgroundColorBox" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="BoxContainer/BackgroundColorBox"]
+layout_mode = 2
+text = "Background Color"
+
+[node name="BackgroundColorPicker" type="ColorPickerButton" parent="BoxContainer/BackgroundColorBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+edit_alpha = false
+edit_intensity = false
+
+[node name="ControlTypeBox" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BoxContainer/ControlTypeBox"]
+layout_mode = 2
+text = "Control Type"
+
+[node name="PlayerControlTypeOption" type="OptionButton" parent="BoxContainer/ControlTypeBox"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Keyboard"
+popup/item_0/id = 0
+popup/item_1/text = "Direct Mouse"
+popup/item_1/id = 1
+popup/item_2/text = "Relative Mouse"
+popup/item_2/id = 2
+
+[node name="KeyboardSensitivityBox" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BoxContainer/KeyboardSensitivityBox"]
+layout_mode = 2
+text = "Keyboard Sensitivity"
+
+[node name="KeyboardSensitivitySlider" type="HSlider" parent="BoxContainer/KeyboardSensitivityBox"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.42
+scrollable = false
+
+[node name="MouseSensitivityBox" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BoxContainer/MouseSensitivityBox"]
+layout_mode = 2
+text = "Mouse Sensitivity"
+
+[node name="MouseSensitivitySlider" type="HSlider" parent="BoxContainer/MouseSensitivityBox"]
+layout_mode = 2
+max_value = 10.0
+step = 0.001
+value = 1.0
+editable = false
+scrollable = false
