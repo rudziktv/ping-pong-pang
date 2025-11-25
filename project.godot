@@ -26,7 +26,7 @@ NetLobby="res://Scripts/Networking/NetLobby.cs"
 
 [dotnet]
 
-project/assembly_name="Ping Pang Pong"
+project/assembly_name="Ping Pong Pang"
 
 [input]
 
